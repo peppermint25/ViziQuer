@@ -1,0 +1,19 @@
+$text-color: antiquewhite; 
+$hover-color: rgb(250, 233, 180);
+
+
+nav{
+    height: 3rem;
+    a {
+        color: $text-color;
+        font-weight: 500;
+        padding: 0;
+        padding-left: 0.5rem;
+
+    
+        &:hover {
+            color: $hover-color;
+        }
+    }
+}
+
