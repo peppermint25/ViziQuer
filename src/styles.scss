@@ -1,2 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap/scss/bootstrap"
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+// $primary-color: rgb(123,102,161);
+// $secondary-color: rgb(250, 222, 138);
+$accent-color: rgb(195, 114, 0);
+
+
+.component{
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    position: absolute;
+    height: 10%;
+    left: 50%;
+    margin-top: 5%;
+    font-size: smaller;
+    transform: translate(-50%);
+    width: clamp(300px, 70%, 900px);
+    
+    a{
+        color: $accent-color;
+    }
+
+}
