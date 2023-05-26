@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ResearchComponent } from './research/research.component';
-import { SampleProjectsComponent } from './sample-projects/sample-projects.component';
 import { QuerryEnvironmentComponent } from './querry-environment/querry-environment.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { OpenSourceCodeComponent } from './open-source-code/open-source-code.component';
-import { DataSchemaComponent } from './data-schema/data-schema.component';
+
+import { DocumentationComponent } from './documentation/documentation.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +18,10 @@ import { DataSchemaComponent } from './data-schema/data-schema.component';
     HomeComponent,
     NavbarComponent,
     ResearchComponent,
-    SampleProjectsComponent,
     QuerryEnvironmentComponent,
     ContactsComponent,
-    OpenSourceCodeComponent,
-    DataSchemaComponent,
+    DocumentationComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

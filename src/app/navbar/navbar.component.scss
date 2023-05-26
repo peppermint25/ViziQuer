@@ -1,52 +1,55 @@
-$primary-color: rgb(123,102,161);
-$secondary-color: rgb(244,196,132);
+$primary-color: rgb(123, 102, 161);
+$secondary-color: rgb(244, 196, 132);
 $accent-color: rgb(195, 114, 0);
-$text-color: rgb(255, 255, 255); 
+$text-color: rgb(255, 255, 255);
 $navbar-hover-color: rgb(61, 55, 101);
 
-.navbar{
+.navbar {
     caret: none;
     padding: 0;
-    font-size: smaller;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     background-color: $primary-color;
     color: $text-color;
     .navbar-brand {
-        // color: $text-color;
-        font-weight: 700;
-        padding: 0;
-        padding-left: 0.75rem;
+    // color: $text-color;
+    font-weight: 700;
+    padding: 0;
+    font-size: x-large;
+    padding-left: 0.75rem;
+    &:hover {
+        color: $secondary-color;
+    }
+    }
+    // .navbar-toggler-icon {
+    // // font-size: smaller;
+    // }
+    .navbar-nav {
+    list-style-type: none;
+    display: flex;
+    // margin: auto;
+    padding-top: 5px;
+    padding-left: 20px;
+    justify-content: flex-end !important;
+    font-size: smaller;
+    #app {
+        background-color: $accent-color;
+        color: $primary-color;
+    }
+    li {
+        display: flex;
+      // margin: auto;
+        .nav-link {
+        padding: 7px;
         &:hover {
             color: $secondary-color;
         }
-    }
-    .navbar-nav {
-        list-style-type: none;
-        display: flex;
-        margin: 0;
-        padding-top: 5px;
-        padding-left: 20px;
-        justify-content:flex-end !important;
-        font-size:x-small;
-        li{
-
-            display: flex;
-            margin: 0;
-            .nav-link{
-                padding: 4px;
-                &:hover {
-                    color: $secondary-color;
-                }
-                &.active{
-                    color: $secondary-color;
-                    background-color: $navbar-hover-color;
-                }
-
-            }
-            // color: $text-color;
-            font-weight: 500;
+        &.active {
+            color: $secondary-color;
+            background-color: $navbar-hover-color;
         }
+        }
+      // color: $text-color;
+        font-weight: 500;
     }
-
+    }
 }
-

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OpenSourceCodeComponent } from './open-source-code.component';
+import { DocumentationComponent } from './documentation.component';
 
-describe('OpenSourceCodeComponent', () => {
-  let component: OpenSourceCodeComponent;
-  let fixture: ComponentFixture<OpenSourceCodeComponent>;
+describe('DocumentationComponent', () => {
+  let component: DocumentationComponent;
+  let fixture: ComponentFixture<DocumentationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OpenSourceCodeComponent ]
+      declarations: [ DocumentationComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OpenSourceCodeComponent);
+    fixture = TestBed.createComponent(DocumentationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,32 +1,58 @@
 <nav class="navbar navbar-expand-sm navbar-dark">
     <a class="navbar-brand" routerLink="/">Viziquer</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarlist" aria-controls="navbarlist" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleCollapseMenu()">
-        <span class="navbar-toggler-icon"></span>
+    <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarlist"
+    aria-controls="navbarlist"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    (click)="toggleCollapseMenu()"
+    >
+    <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" #collapseMenu id="navbarlist">
-        <ul class="navbar-nav ">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true }">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/querry-environment" routerLinkActive="active">Querry Environment</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/sample-project" routerLinkActive="active">Sample projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/open-source-code" routerLinkActive="active">Open Source Code</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/data-schema" routerLinkActive="active">Data Schema</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/research" routerLinkActive="active">Research</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/contacts" routerLinkActive="active">Contacts</a>
-            </li>
-        </ul>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+        >
+        </li>
+        <li class="nav-item">
+        <a
+            class="nav-link"
+            routerLink="/querry-environment"
+            routerLinkActive="active"
+            >Online Demo</a
+        >
+        </li>
+        <li class="nav-item">
+        <a
+            class="nav-link"
+            routerLink="/documentation"
+            routerLinkActive="active"
+            >Documentation</a
+        >
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" routerLink="/research" routerLinkActive="active"
+            >R&D</a
+        >
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" routerLink="/contacts" routerLinkActive="active"
+            >About Us</a
+        >
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" id="app" href="https://viziquer.app/">App</a>
+        </li>
+    </ul>
     </div>
 </nav>
