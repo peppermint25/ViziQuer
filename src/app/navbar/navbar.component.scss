@@ -2,7 +2,7 @@ $primary-color: rgb(123, 102, 161);
 $secondary-color: rgb(244, 196, 132);
 $accent-color: rgb(195, 114, 0);
 $text-color: rgb(255, 255, 255);
-$navbar-hover-color: rgb(61, 55, 101);
+$darker-primary-color: rgb(61, 55, 101);
 
 .navbar {
     caret: none;
@@ -11,45 +11,49 @@ $navbar-hover-color: rgb(61, 55, 101);
     background-color: $primary-color;
     color: $text-color;
     .navbar-brand {
-    // color: $text-color;
-    font-weight: 700;
-    padding: 0;
-    font-size: x-large;
-    padding-left: 0.75rem;
-    &:hover {
-        color: $secondary-color;
-    }
+        // color: $text-color;
+        font-weight: 700;
+        padding: 0;
+        font-size: xx-large;
+        padding-left: 0.75rem;
+        &:hover {
+            color: $secondary-color;
+        }
     }
     // .navbar-toggler-icon {
     // // font-size: smaller;
     // }
     .navbar-nav {
-    list-style-type: none;
-    display: flex;
-    // margin: auto;
-    padding-top: 5px;
-    padding-left: 20px;
-    justify-content: flex-end !important;
-    font-size: smaller;
-    #app {
-        background-color: $accent-color;
-        color: $primary-color;
-    }
-    li {
         display: flex;
-      // margin: auto;
-        .nav-link {
-        padding: 7px;
-        &:hover {
-            color: $secondary-color;
+        // margin: auto;
+        padding-left: 20px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        font-size: smaller;
+        #app {
+            background-color: $secondary-color;
+            color: $primary-color;
+            &:hover{
+                color: $darker-primary-color;
+            }
         }
-        &.active {
-            color: $secondary-color;
-            background-color: $navbar-hover-color;
+        li {
+            display: flex;
+            align-items: flex-end;
+            font-size: large;
+
+            .nav-link {
+                white-space: nowrap;
+                padding: 12px;
+                &:hover {
+                    color: $secondary-color;
+                }
+                &.active {
+                    color: $secondary-color;
+                    background-color: $darker-primary-color;
+                }
+            }
+            font-weight: 500;
         }
-        }
-      // color: $text-color;
-        font-weight: 500;
-    }
     }
 }
