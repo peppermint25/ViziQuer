@@ -11,6 +11,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 
 import { DocumentationComponent } from './documentation/documentation.component';
 import { FooterComponent } from './footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    [RouterModule]
   ],
   providers: [],
   bootstrap: [AppComponent]
