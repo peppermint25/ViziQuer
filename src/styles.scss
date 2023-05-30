@@ -11,13 +11,9 @@ $accent-color: rgb(195, 114, 0);
 
 .component{
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    // position: absolute;
-    // height: 10%;
     left: 50%;
-    // top: 20%;
-    margin: auto;
-    margin-top: 1rem;
+    margin: 1rem auto;
+    padding-bottom: 20px;
     font-size: smaller;
-    // transform: translate(-50%, -50%);
     width: clamp(300px, 70%, 900px);
 }

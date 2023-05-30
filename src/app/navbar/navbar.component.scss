@@ -5,8 +5,10 @@ $text-color: rgb(255, 255, 255);
 $darker-primary-color: rgb(61, 55, 101);
 
 .navbar {
-    caret: none;
+    position: sticky;
     padding: 0;
+    top: 0;
+    z-index: 5;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     background-color: $primary-color;
     color: $text-color;
@@ -20,12 +22,8 @@ $darker-primary-color: rgb(61, 55, 101);
             color: $secondary-color;
         }
     }
-    // .navbar-toggler-icon {
-    // // font-size: smaller;
-    // }
     .navbar-nav {
         display: flex;
-        // margin: auto;
         padding-left: 20px;
         flex-wrap: wrap;
         justify-content: flex-start;

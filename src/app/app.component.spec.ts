@@ -24,5 +24,18 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // Other test cases...
+  it('should render the app navbar', () => {
+    const navbar = fixture.nativeElement.querySelector('app-navbar');
+    expect(navbar).toBeTruthy();
+  });
+  
+  it('should render the router outlet', () => {
+    const routerOutlet = fixture.nativeElement.querySelector('router-outlet');
+    expect(routerOutlet).toBeTruthy();
+  });
+  
+  it('should render the app footer', () => {
+    const footer = fixture.nativeElement.querySelector('app-footer');
+    expect(footer).toBeTruthy();
+  });
 });
