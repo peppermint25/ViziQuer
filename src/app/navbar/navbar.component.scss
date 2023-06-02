@@ -9,11 +9,9 @@ $darker-primary-color: rgb(61, 55, 101);
     padding: 0;
     top: 0;
     z-index: 5;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     background-color: $primary-color;
     color: $text-color;
     .navbar-brand {
-        // color: $text-color;
         font-weight: 700;
         padding: 0;
         font-size: xx-large;
