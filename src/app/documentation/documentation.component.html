@@ -215,51 +215,154 @@
         <div class="picture"><img src="./assets/img/grid_img13.png"></div>
     </div><br><br>
   </div>
-  <div class="component-element">
+  <div class="component-element" id="visual-query">
     <h2>Visual Query Example Hospital</h2>
-    <h5>Mini-Hospital data schema</h5>
+    <h5 id="hospital-schema">Mini-Hospital data schema</h5>
     <div>
       The visual query environment needs a data schema defining the available class and property vocabulary, as well as
       applicability of properties to classes and cardinalities. <br>  
       The following visualization shows a mini-hospital data schema used in further examples.
       <img src="./assets/img/Hospital_example.png">
       The center of the data schema is the Patient class; each patient can have a number of hospital episodes
-(HospitalEpisode), and a number of outpatient episodes (OutpatientEpisode). There can be a number of treatments
-in wards (TreatmentInWard) for each hospital episode, numbered starting by 1 in the orderNo attribute. The
-attribute isLastTr (values “true” or “”false”) marks each treatment in ward as the last one or non-last one for its
-episode. Further on, every treatment in ward can have a number of associated manipulations (Manipulation).<br><br>
-There are cardinality marks (e.g. [0..1] or *) at some attributes or links. The attributes or links not having any
-cardinality mark are assumed to have cardinality 1 that means existence of exactly one required value corresponding
-to the attribute or the link. <br><br>
-The classes CManipDescr, CPhysician and CDiagnosis contain classifier values of manipulation descriptions,
-physicians and diagnoses respectively. There are links to the classifier classes from the main data classes. In the
-query building process these links can be traversed both in the direction from the data class to the classifier class, as
-well as in the reverse direction. <br><br>
-For every hospital episode there can be several admission and several discharge diagnoses specified; one of these
-diagnoses is marked as the main admission or discharge diagnosis respectively (accessible from the episode by link
-admissionDiagnosis_main or dischargeDiagnosis_main), all episode diagnoses that are not main admission or
-discharge diagnoses are extra diagnoses (accessible from the episode by the link admissionDiagnosis_extra or
-dischargeDiagnosis_extra). The links admissionDiagnosis and dischargeDiagnosis can be used to reach all admission
-or discharge diagnoses (including the main ones and the extra ones) for an episode, respectively). <br><br>
-Similarly, for an outpatient episode the outpatientDiagnosis link lists all diagnoses, outpatientDiagnosis_main lists
-the main diagnosis and outpatientDiagnosis_extra lists the extra diagnoses. <br><br>
-<h4>Example Queries</h4>
-<img src="./assets/img/Hospital_example2.png">
-<img src="./assets/img/Hospital_example3.png">
-<img src="./assets/img/Hospital_example4.png">
-<img src="./assets/img/Hospital_example5.png">
+      (HospitalEpisode), and a number of outpatient episodes (OutpatientEpisode). There can be a number of treatments
+      in wards (TreatmentInWard) for each hospital episode, numbered starting by 1 in the orderNo attribute. The
+      attribute isLastTr (values “true” or “”false”) marks each treatment in ward as the last one or non-last one for its
+      episode. Further on, every treatment in ward can have a number of associated manipulations (Manipulation).<br><br>
+      There are cardinality marks (e.g. [0..1] or *) at some attributes or links. The attributes or links not having any
+      cardinality mark are assumed to have cardinality 1 that means existence of exactly one required value corresponding
+      to the attribute or the link. <br><br>
+      The classes CManipDescr, CPhysician and CDiagnosis contain classifier values of manipulation descriptions,
+      physicians and diagnoses respectively. There are links to the classifier classes from the main data classes. In the
+      query building process these links can be traversed both in the direction from the data class to the classifier class, as
+      well as in the reverse direction. <br><br>
+      For every hospital episode there can be several admission and several discharge diagnoses specified; one of these
+      diagnoses is marked as the main admission or discharge diagnosis respectively (accessible from the episode by link
+      admissionDiagnosis_main or dischargeDiagnosis_main), all episode diagnoses that are not main admission or
+      discharge diagnoses are extra diagnoses (accessible from the episode by the link admissionDiagnosis_extra or
+      dischargeDiagnosis_extra). The links admissionDiagnosis and dischargeDiagnosis can be used to reach all admission
+      or discharge diagnoses (including the main ones and the extra ones) for an episode, respectively). <br><br>
+      Similarly, for an outpatient episode the outpatientDiagnosis link lists all diagnoses, outpatientDiagnosis_main lists
+      the main diagnosis and outpatientDiagnosis_extra lists the extra diagnoses. <br><br>
+      <h4 id="example_queries">Example Queries</h4>
+      <img src="./assets/img/Hospital_example2.png">
+      <img src="./assets/img/Hospital_example3.png">
+      <img src="./assets/img/Hospital_example4.png">
+      <img src="./assets/img/Hospital_example5.png">
+    </div>
+  </div>
+  <div class="component-element">
+    <h2>User manual for the classic version</h2>
+    <div>
+      ViziQuer provides visual/diagrammatic environment for ontology-based data query definition and execution.
+To work with ViziQuer one needs:
+<ul>
+  <li>
+    An ontology (a data schema1), and
+  </li>
+  <li>
+    A connection to SPARQL endpoint (if the generated SPARQL queries are to be directly executed from the ViziQuer environment).
+  </li>
+</ul>
+The data schema specifies:
+<ul>
+  <li>
+    the local name to full URI mapping for classes and properties,
+  </li>
+  <li>
+    subclass and subproperty relations,
+  </li>
+  <li>
+    class-to-property connections, and
 
+  </li>
+  <li>
+    cardinalities (important to determine, if maximum cardinality for a property in the context of a class
+    is 1, or not).
+  </li>
+</ul>
+As of ViziQuer 0.2.2, there is option to have pre-configured data schemas and even full initial projects
+(including data schema, project parameters (endpoint configuration and others), and visual query examples).<br><br>
+There is public ViziQuer environment available from ViziQuer main page with user self-registration option
+available. <br><br>
+The ViziQuer software is open source (MIT licence), the instructions for local tool setup are available at the
+ViziQuer GitHub page: <a href="https://github.com/LUMII-Syslab/viziquer">https://github.com/LUMII-Syslab/viziquer</a> <br><br>
+Currently the administration (configuration) rights are assigned to the single user that has been registered
+(signed up) first on a given server. <br><br>
+We recommend Google Chrome for work within ViziQuer query environment.
+
+    <h4>Work with projects</h4>
+    After sign-up to the query tool, an empty user environment (tab Projects) is displayed.<br><br>
+    Choose ‘New project’, then enter the name you wish for the project and choose the tool from the dropdown menu (should there be no tools available in a local installation, ask the system administrator to
+    complete the tool environment setup, as described in <a href="https://github.com/LUMII-Syslab/viziquer">https://github.com/LUMII-Syslab/viziquer</a>). <br><br>
+    Should the pre-configured data schemas and/or projects be installed at the endpoint, the user can choose using some of the available options during the new project dialogue. <img src="assets/img/manual_img1.png"><br>
+    Upon successful creation of a project, its icon becomes available:<img src="assets/img/manual_img2.png"> <i>Note. On the upper right hand of the project icon there is a small menu allowing to Duplicate, Edit (e.g.
+      change the name), Delete and Leave the project (in case of shared use of the project).</i><br><br>
+      Click the project icon, or Diagrams menu item on the left to get into the project environment.<img src="assets/img/manual_img3.png"><br>
+      To make the project environment working, upload the data schema (a JSON file) (#1) and tune the project
+settings (#2), in particular, a SPARQL endpoint and the named graph, as well as query engine type (OpenLink
+Virtuoso by default, General SPARQL option available). <br><br>
+You can also import a project from a project JSON serialization (#4; the diagrams from the imported project
+are added to the diagrams of the current project). The projects saved from this or from some other server
+can be imported (there is requirement that tool configurations on both projects coincide (are based on the
+same tool JSON configuration files)). <br>
+
+<i>Note. The data ontology is currently not included in a project JSON serialization, it has to be set up
+  separately after project upload.</i><br><br>
+  #3 allows to save the project into its JSON serialization (currently may work better on Firefox, than Chrome).
+#5 is migration of the project onto new version of the query tool configuration.
+      <h4>Work with diagrams</h4>
+      A project may have several query diagrams, each holding a single or multiple queries. <br><br>
+Each query in a diagram is a connected component that has a single main class node (orange round
+rectangle) and possibly a number of condition classes. <br><br>
+Each query shall have a spanning tree of all its nodes and edges that are not marked as condition edges (for
+instance, if a query does not have condition edges, it has to have a tree shape with the main query class
+being its root). The condition edges are added on top of the query tree structure. <br><br>
+A project diagram environment consists of diagram menu, symbol palette, visual query area, SPARQL /
+Results tabs and a property pane, initially showing the classes of the uploaded ontology (data schema). <br><br>
+The ontology classes are shown in the property pane whenever there is no element or element group
+selected in the visual query pane (a click on the empty space in the diagram shall bring up the class list into
+the property pane). <br><br>
+A double-click on the class name in the property pane inserts a new main query node, based on this class,
+into the visual query area.
+<img src="assets/img/manual_img4.png"> <br><br>
+Another way to start a query drawing is to click on the orange class seed in the symbol palette and then
+draw a class symbol within the visual diagram area, followed by choosing the class name in the class
+compartment in the node property pane.<br><br>
+Should a single node or single edge be selected/focused in the visual query area, the property pane shall
+show the properties of the selected/focused node or edge. <br><br>
+The following figure illustrates the query environment in action.
+<img src="assets/img/manual_img5.png"><br>
+The ViziQuer tool is intended to be able to work with any user-supplied data schema. <br><br>
+The following figure visualizes a simple mini-University ontology, used as a data schema in the following
+examples. <img src="assets/img/manual_img6.png"><br>
+The following table show some visual query examples over the mini-University ontology.
+      <div class="grid">
+        
+      </div>
     </div>
   </div>
 </div>
 <div class="sidenav">
-  <nav>
-    <ul>
-      <li><a href='./documentation#sample-projects'>Sample Projects</a></li>
-      <li><a href='./documentation#open-source-code'>Open Source Code</a></li>
-      <li><a href='./documentation#data-retrieval'>Data schema retrieval</a></li>
-      <li><a href='./documentation#data-schema'>Data Schema</a></li>
-      <li><a href='./documentation#short-notation'>Short Notation</a></li>
-    </ul>
-  </nav>
+<nav>
+  <ul>
+    <li><a href="/documentation/##sample-projects">Sample Projects</a></li>
+    <li><a href="/documentation/##open-source-code">Open Source Code</a></li>
+    <li><a href="/documentation/##data-retrieval">Data schema retrieval</a></li>
+    <li><a href="/documentation/##data-schema">Data Schema</a></li>
+    <li><a href="/documentation/##short-notation">Short Notation</a></li>
+    <li>
+      <a href="/documentation/##visual-query">Visual Query Example Hospital</a>
+      <ul>
+        <li><a href="/documentation/#hospital-schema">Mini-Hospital data schema</a></li>
+        <li><a href="/documentation/##example_queries">Example Queries</a></li>
+      </ul>
+    </li>
+    <li><a>User manual for the classic version</a></li>
+  </ul>
+</nav>
+
 </div>
+
+
+
+
