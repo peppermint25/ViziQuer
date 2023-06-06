@@ -25,4 +25,5 @@
             </div>
     </div>
 </div>
-<iframe id="app_iframe" src="https://viziquer.app/public-diagram?schema=DBpedia" title="Viziquer"></iframe>
+
+<iframe *ngIf="url_to_open" id="app_iframe" [src]="url_to_open" title="Viziquer"></iframe>

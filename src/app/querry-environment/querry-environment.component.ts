@@ -1,30 +1,41 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-querry-environment',
   templateUrl: './querry-environment.component.html',
   styleUrls: ['./querry-environment.component.scss']
 })
-export class QuerryEnvironmentComponent implements OnInit, OnDestroy {
-  iframeSrc: SafeResourceUrl | null = null;
+export class QuerryEnvironmentComponent  {
+  url_to_open: SafeResourceUrl = ''
+  viziquer_host = 'https://viziquer.app'
+  post_url = this.viziquer_host+'/api/public-diagram?schema=45&query=67';
 
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(private sanitizer: DomSanitizer, private http: HttpClient) {
+    let local_url = localStorage.getItem('url')
 
-  ngOnInit(): void {
-    const storedSrc = sessionStorage.getItem('iframeSrc');
-    if (storedSrc) {
-      this.iframeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(storedSrc);
+    if(local_url){
+      this.url_to_open = this.generate_url(local_url);
+    }else{
+      this.postUrl();
     }
+
+
   }
 
-  ngOnDestroy(): void {
-    sessionStorage.removeItem('iframeSrc');
+  generate_url(url: string){
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);    
   }
-
-  saveIframeSrc(): void {
-    const iframeElement = document.getElementById('app_iframe') as HTMLIFrameElement;
-    const iframeSrc = iframeElement.src;
-    sessionStorage.setItem('iframeSrc', iframeSrc);
+  
+  postUrl(){
+    let data: Observable<any> = this.http.post(this.post_url, {});
+    data.subscribe((result) => {
+        let url_open = this.viziquer_host+result.response.url;
+        this.url_to_open =  this.generate_url(url_open);
+        localStorage.setItem('url', url_open);
+    });
   }
 }

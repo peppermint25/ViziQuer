@@ -77,29 +77,3 @@ $darker-primary-color: rgb(61, 55, 101);
     }
   }
 }
-
-.sidebar {
-  position: fixed;
-  top: 33%;
-  right: 0;
-  width: 200px; /* Adjust the width as needed */
-  height: 20vh; /* Adjust the height as needed */
-  z-index: 100;
-  padding: 20px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background-color: #f8f9fa;
-}
-
-.sidebar .nav-link {
-  font-weight: 500;
-  color: #333;
-}
-
-.sidebar .nav-link:hover {
-  color: #007bff;
-}
-
-.main {
-  margin-right: 220px; /* Adjust the margin to create space for the floating navbar box */
-}

@@ -12,6 +12,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     [RouterModule]
   ],
   providers: [],
