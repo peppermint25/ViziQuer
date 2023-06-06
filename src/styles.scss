@@ -8,10 +8,16 @@ $text-color: rgb(255, 255, 255);
 $darker-primary-color: rgb(61, 55, 101);
 
 *{
+    color-scheme: (light dark);
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     line-height: 1.75;
     a{
         color: $accent-color;
+    }
+
+    img{
+        max-width: 100%;
+        display: block;
     }
 
 
@@ -44,9 +50,6 @@ $darker-primary-color: rgb(61, 55, 101);
     padding-bottom: 20px;
     font-size: smaller;
     width: clamp(300px, 70%, 900px);
-    img{
-        width: 100%;
-    }
     .component-element{
         div {
             padding: 0.25rem;
