@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class QuerryEnvironmentComponent  {
   url_to_open: SafeResourceUrl = ''
   viziquer_host = 'https://viziquer.app'
-  post_url = this.viziquer_host+'/api/public-diagram?schema=45&query=67';
+  post_url = this.viziquer_host+'/api/public-diagram?schema=DBpedia';
 
   constructor(private sanitizer: DomSanitizer, private http: HttpClient) {
     let local_url = localStorage.getItem('url')
