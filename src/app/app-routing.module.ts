@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ResearchComponent } from './research/research.component';
 import { QuerryEnvironmentComponent } from './querry-environment/querry-environment.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { DocumentationComponent } from './documentation/documentation.component';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,6 +20,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    { provide: LocationStrategy, useClass: PathLocationStrategy }
+  ]
 })
 export class AppRoutingModule { }

@@ -9,11 +9,4 @@ import { Component } from '@angular/core';
 })
 export class DocumentationComponent {
 
-  // scrollTo(sectionId: string) {
-  //   const element = document.getElementById(sectionId);
-  //   if (element) {
-  //     this.scrollService.scrollTo(element);
-  //   }
-  // }
-
 }

@@ -45,39 +45,39 @@ $darker-primary-color: rgb(61, 55, 101);
     }
   }
 }
-.sidenav{
-  position: fixed;
-  display: block;
-  top: 25%;
-  left: 85%;
-  font-size: 1.25rem;
-  ul{
-    list-style: none ;
-    padding: 0;
-    margin: 0;
-    border: 4px solid $secondary-color;
-    li{
-      padding: 5px;
-      align-items: center;
-      background-color: $primary-color;
-      // border: 4px solid $secondary-color;
-      &:hover{
-        background-color: $darker-primary-color;
-      }
-      a{
-        color: $text-color;
-        display:flex;
-        text-decoration: none;
-      }
-      ul{
-        border: none;
-        font-size: 0.8em;
-        padding-left: 0.25em;
-      }
-    }
+
+// #content{
+//   padding: 0;
+//   margin: none;
+// }
+
+#sidenav{
+  top: 30%;
+// position: fixed;
+}
+
+.nav-link{
+  color: $primary-color;
+
+  &:hover{
+    background-color: $secondary-color;
+  }
+  .active{
+    background-color: $accent-color;
+    color: $text-color;
   }
 }
 
-#navbar{
-  position: fixed;
+@media only screen and (max-width: 850px) {
+  #sidenav{
+    display: none;
+  } 
+  #content{
+    width: 100%;
+  }
+  
+}
+
+.row{
+  width: 95%;
 }
