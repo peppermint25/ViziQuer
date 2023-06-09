@@ -46,10 +46,10 @@ $darker-primary-color: rgb(61, 55, 101);
   }
 }
 
-// #content{
-//   padding: 0;
-//   margin: none;
-// }
+#content{
+  padding-bottom: 2rem;
+  margin: none;
+}
 
 #sidenav{
   top: 30%;
@@ -66,6 +66,10 @@ $darker-primary-color: rgb(61, 55, 101);
     background-color: $accent-color;
     color: $text-color;
   }
+}
+
+.nav-link.active{
+  background-color: $darker-primary-color;
 }
 
 @media only screen and (max-width: 850px) {

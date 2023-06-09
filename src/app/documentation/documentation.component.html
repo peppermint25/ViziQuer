@@ -367,10 +367,81 @@
       The following table show some visual query examples over the mini-University ontology.
           </div>
           <div class="grid">
-    
+              <div class="text">Select instances of a class, show the values of the
+                instance URI (specified by (select this)) and the
+                designated instance attributes (courseCode,
+                courseCredits, courseName).
+                The attributes are optional by default; the mark
+                (+) indicates that the corresponding attribute
+                (courseCode) is required.
+                The attribute courseCredits is renamed into
+                credits in the query output.
+                Only those instances whose attributes satisfy the
+                given condition are selected.</div>
+              <div class="picture"><img src="assets/img/manual_grid1.png"></div>
+              <div class="text">Count all courses.</div>
+              <div class="picture"><img src="assets/img/manual_grid2.png"></div>
+              <div class="text">Count all courses, grouped by their attribute
+                courseCredits values.</div>
+              <div class="picture"><img src="assets/img/manual_grid3.png"></div>
+              <div class="text">Select student numbers together with students’
+                nationality code (the nationality has to be
+                present for the student).
+                </div>
+              <div class="picture"><img src="assets/img/manual_grid4.png"></div>
+              <div class="text">Select student numbers together with optional
+                students’ nationality code.
+                </div>
+              <div class="picture"><img src="assets/img/manual_grid5.png"></div>
+              <div class="text">Select student numbers of students that do not
+                have a nationality specified.</div>
+              <div class="picture"><img src="assets/img/manual_grid6.png"></div>
+                <div class="text">Select name and count of taken courses of
+                  students taking at least 3 courses.
+                  Note the subquery link (black bullet) considering
+                  the courses for each student separately.
+                  The subquery selection attributes have to be
+                  included into the main query select list, if they
+                  are to be included in the query output.</div>
+                <div class="picture"><img src="assets/img/manual_grid7.png"></div>
+              <div class="text">Count registrations (a student can be registered
+                for a course) by the year of the course
+                completion date.
+                In general, SPARQL functions over attribute
+                values are allowed in ViziQuer expressions
+                (either in attribute or condition fields).
+              <i>Note. Although the code completion support is
+                currently limited just for entity names, more
+                expressions are supported, if entered correctly.</i></div>
+              <div class="picture"><img src="assets/img/manual_grid8.png"></div>
+              <div class="text">For every student registered at least for one
+                course find the student’s mean mark over all
+                courses (= all registrations for a course).</div>
+              <div class="picture"><img src="assets/img/manual_grid9.png"></div>
+              <div class="text">Using property paths notation the student’s
+                mean mark can be computed within a more
+                compact diagram.
+                </div>
+              <div class="picture"><img src="assets/img/manual_grid10.png"></div>
+              <div class="text">Find all marks for student participation in a
+                course that have been assigned at least 3 times,
+                together with the number of times the mark has
+                been assigned. <br><br>
+                The subquery counts the registrations per
+                assigned mark; the outer query consisting of a
+                single non-data node corresponds to the outer
+                query level that does the filtering. <br><br>
+                The mark ++ marks a query edge that is does not
+                correspond to a data link among instances.
+                </div>
+              <div class="picture"><img src="assets/img/manual_grid11.png"></div>
+              <div class="text">For every course list its name together with the
+                number of persons related to it either as
+                students or teachers</div>
+              <div class="picture"><img src="assets/img/manual_grid12.png"></div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
