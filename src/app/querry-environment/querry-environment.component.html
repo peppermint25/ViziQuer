@@ -27,6 +27,13 @@
 </div>
 <div class="button-row">
     <a *ngIf="url_to_open" class="btn" [href]="url_to_open" target="_blank">Open in fullscreen</a>
+    <div class="dropdown">
+        <a class="btn btn-primary dropdown-toggle" href="" role="button" data-toggle="dropdown">Share
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><p>{{getUrl()}}</p><a href="#" (click)="copyUrl()">Copy URL</a></li>
+        </ul>
+    </div>
 </div>
 <!-- a button which navigates to the url of variable named url_to_open -->
 <!-- that fu -->

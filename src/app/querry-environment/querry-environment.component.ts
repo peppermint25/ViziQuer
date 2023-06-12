@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-querry-environment',
@@ -13,7 +14,7 @@ export class QuerryEnvironmentComponent  {
   viziquer_host = 'https://viziquer.app'
   post_url = this.viziquer_host+'/api/public-diagram?schema=DBpedia';
 
-  constructor(private sanitizer: DomSanitizer, private http: HttpClient) {
+  constructor(@Inject(DomSanitizer) private sanitizer: DomSanitizer, private http: HttpClient, private clipboard: Clipboard) {
     let local_url = localStorage.getItem('url')
 
     if(local_url){
@@ -39,9 +40,8 @@ export class QuerryEnvironmentComponent  {
   copyUrl(){
     let current_url = localStorage.getItem('url');
     if(current_url){
-      navigator.clipboard.writeText(current_url);
-    };
-    
+      this.clipboard.copy(current_url);    
+    };    
   }
 
   generate_url(url: string){
