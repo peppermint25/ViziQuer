@@ -3,7 +3,6 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-querry-environment',
   templateUrl: './querry-environment.component.html',
@@ -24,6 +23,25 @@ export class QuerryEnvironmentComponent  {
     }
 
 
+  }
+
+  // have to make a function openurl() for a pop up in html which displays the url of the iframe with a button to copy it
+  getUrl(){
+    let current_url = localStorage.getItem('url');
+    return current_url;
+  }
+
+  // make a function which copys the url of the iframe to users clipboar
+  
+
+
+
+  copyUrl(){
+    let current_url = localStorage.getItem('url');
+    if(current_url){
+      navigator.clipboard.writeText(current_url);
+    };
+    
   }
 
   generate_url(url: string){
