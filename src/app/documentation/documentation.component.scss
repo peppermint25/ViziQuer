@@ -5,13 +5,15 @@ $text-color: rgb(255, 255, 255);
 $darker-primary-color: rgb(61, 55, 101);
 
 .grid{
+  justify-content: center;
+  text-align: center;
   position: relative;
   max-width: 100%;
   overflow-x: auto;
   overflow-y: none;
   padding: 0;
   margin: 0;
-  display: grid;
+  // display: grid;
   grid-template:
   "text picture"
   "text picture"
@@ -30,18 +32,12 @@ $darker-primary-color: rgb(61, 55, 101);
     height: 100%;
     width: 100%;
     position: relative;
-    border: black solid 2px;
+    // border: black solid 2px;
     overflow: visible;
     img{
+      justify-content: center;
+      margin: 0 auto;
       width: auto;
-      &:hover{
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        border: 1px solid black;
-        transform: scale(1.2);
-      }
     }
   }
 }

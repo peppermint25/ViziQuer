@@ -7,7 +7,7 @@ $darker-primary-color: rgb(61, 55, 101);
 iframe {
   position: relative;
   width: 100%;
-  padding: 3rem 5rem;
+  padding: 10px 0;
   height: 60rem;
 }
 
@@ -28,4 +28,8 @@ iframe {
   display: inline;
   width: 80%;
   margin: 5px 2rem;
+}
+
+.container{
+  width: 90%;
 }

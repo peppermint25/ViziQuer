@@ -1,38 +1,34 @@
 <div class="component">
-    <div class="component-element">
-            <h2>Querry Environment</h2>
-            <div>
-
-                Open <a href="https://viziquer.app">viziquer.app</a>.<br>
-                Google Chrome browser is recommended (may work also in other browsers). <br><br>
-                Register (sign up) as a new user (email checking not done, any e-mail-like string is accepted), then log in. 
-                <br><br>
-                Create a new project (give at least the name for the project), you can choose to initialize your project by some 
-                predefined configuration (e.g., 'Initialise by DBPedia sample project'; projects over wikidata, Europeana and a mini-University 
-                sample dataset available, as well).
-                If an empty project is created, its contents can be uploaded (button 'Upload Project') later from a sample project file or URL 
-                (cf. Sample Projects section).
-                <br>
-                <br>
-                Create a new diagram, click on the diagram pane. The tabs for classes, properties and individuals shall be to the right. 
-                Double-click an item in a list to seed a query from it.
-
-                A <a href="https://viziquer.lumii.lv/DBPedia_ShortIntro.pdf">short notation and tool explanation</a> with examples in the DBPedia context is available.
-                <br>
-                A <a href="https://viziquer.lumii.lv/VQ_UserManual.pdf">user manual for the classic version</a> explains the query notation and environment concepts.
-                <br>
-                The <a href="https://viziquer.lumii.lv/VisualQueryExamples_Hospital.pdf">query notation presentation over hospital data</a> contains a wealth of query examples.
-            </div>
-    </div>
+    <h1>Online demo</h1>
 </div>
-<div class="button-row">
-    <a *ngIf="url_to_open" class="btn" [href]="url_to_open" target="_blank">Open in fullscreen</a>
-    <div class="dropdown">
-        <a class="btn btn-primary dropdown-toggle" href="" role="button" data-toggle="dropdown">Share
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><p>{{getUrl()}}</p><a href="#" (click)="copyUrl()">Copy URL</a></li>
-        </ul>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+        <div class="d-flex justify-content-between">
+            <button type="button " class="btn btn-primary">Help</button>
+            <div class="btn-group float-end">
+                <a *ngIf="url_to_open" class="btn" [href]="url_to_open" target="_blank">Open in fullscreen</a>
+                <button type="button" class="btn btn-primary" (click)="reloadUrl()">Reload</button>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <p>{{getUrl()}}</p>
+                            <a class="btn" href="#" (click)="copyUrl()">Copy URL</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <iframe *ngIf="url_to_open" id="app_iframe" [src]="url_to_open" title="Viziquer"></iframe>        </div>
+            <img *ngIf="!url_to_open" src="assets/images/loading.gif" alt="Loading...">
     </div>
 </div>
 <!-- a button which navigates to the url of variable named url_to_open -->
@@ -71,7 +67,7 @@
 </div> -->
 
 
-<div class="component-element">
+<!-- <div class="component-element">
     <h2>Current URL</h2>
     <div>
         {{getUrl()}}
@@ -82,7 +78,7 @@
     <div>
         <button class="btn btn-primary" (click)="copyUrl()">Copy URL</button>
     </div>
-</div>
+</div> -->
 <!-- <div class="component-element"> -->
 <!--     <h2>Open Viziquer</h2> -->
 <!--     <div> -->
@@ -95,4 +91,3 @@
 
 
 
-<iframe *ngIf="url_to_open" id="app_iframe" [src]="url_to_open" title="Viziquer"></iframe>

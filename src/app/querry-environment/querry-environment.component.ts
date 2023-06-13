@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Clipboard } from '@angular/cdk/clipboard';
 
+declare var $: any;
+
 @Component({
   selector: 'app-querry-environment',
   templateUrl: './querry-environment.component.html',
@@ -26,14 +28,18 @@ export class QuerryEnvironmentComponent  {
 
   }
 
-  // have to make a function openurl() for a pop up in html which displays the url of the iframe with a button to copy it
+
   getUrl(){
     let current_url = localStorage.getItem('url');
     return current_url;
   }
 
-  // make a function which copys the url of the iframe to users clipboar
-  
+  // make a function to reload the with a new one it needs to refresh the iframe too
+
+  reloadUrl(){
+    localStorage.removeItem('url');
+    this.postUrl();
+  }
 
 
 
@@ -54,6 +60,7 @@ export class QuerryEnvironmentComponent  {
         let url_open = this.viziquer_host+result.response.url;
         this.url_to_open =  this.generate_url(url_open);
         localStorage.setItem('url', url_open);
+        console.log(url_open);
     });
   }
 }

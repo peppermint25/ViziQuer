@@ -4,10 +4,7 @@
   <div class="col-3" id="sidenav">
     <nav id="navbar" class="h-100 flex-column align-items-stretch pe-4 border-end">
       <nav class="nav nav-pills flex-column">
-        <a class="nav-link" href="documentation#sample-projects">Sample Projects</a>
-        <a class="nav-link" href="documentation#open-source-code">Open Source Code</a>
-        <a class="nav-link" href="documentation#data-retrieval">Data Schema Retrieval</a>
-        <a class="nav-link" href="documentation#data-schema">Data Schemas</a>
+
         <a class="nav-link" href="documentation#short-notation">Short Notation and Tool Explenation</a>
         <a class="nav-link" href="documentation#visual-query">Visual Query Example Hospital</a>
         <nav class="nav nav-pills flex-column">
@@ -19,119 +16,18 @@
           <a class="nav-link ms-3 my-1" href="documentation#work-with-projects">Work with projects</a>
           <a class="nav-link ms-3 my-1" href="documentation#work-with-diagrams">Work with diagrams</a>
         </nav>
+        <a class="nav-link" href="documentation#resources">Resources</a>
+        <nav class="nav nav-pills flex-column">
+          <a class="nav-link ms-3 my-1" href="documentation#sample-projects">Sample Projects</a>
+          <a class="nav-link ms-3 my-1" href="documentation#open-source-code">Open Source Code</a>
+          <a class="nav-link ms-3 my-1" href="documentation#data-retrieval">Data Schema Retrieval</a>
+          <a class="nav-link ms-3 my-1" href="documentation#data-schema">Data Schemas</a>
+        </nav>
       </nav>
     </nav> 
   </div>
   <div class="col-9" id="content">
     <div data-bs-targer="#navbar" data-bs-spy="scroll" data-bs-smooth-scroll="true" class="component">
-      <div class="component-element" id="sample-projects">
-        <h2>Sample Projects</h2>
-        <div>
-          The example projects with configurations over Europeana, DBPedia and
-          wikidata can be uploaded from the following locations (other sample projects
-          are offered during the project initialization, as well):
-          <br />
-          <li>
-            <a href="https://viziquer.lumii.lv/dss/resources/Europeana_Sample.json"
-              >Europeana sample project.</a>
-          </li>
-          <li>
-            <a href="https://viziquer.lumii.lv/dss/resources/DBPedia_Sample.json"
-              >DBPedia sample project.</a>
-          </li>
-          <li>
-            <a href="https://viziquer.lumii.lv/dss/resources/Wikidata_Sample.json"
-              >Wikidata sample project.</a>
-          </li>
-          <br/>
-        </div>
-      </div>
-      <div class="component-element" id="open-source-code">
-        <h2>Open Source Code</h2>
-        <div>
-            Check out the branch
-            <a href="https://github.com/LUMII-Syslab/viziquer/tree/dss-based-schemata"
-              >dss-based-schemata</a
-            >
-            from
-            <a href="https://github.com/LUMII-Syslab/viziquer"
-              >Viziquer repository in GitHub</a
-            >
-            for the visual tool version that works with the data shape (schema) server
-            (needed for large data schema support).
-            <br /><br />
-            The
-            <a href="https://github.com/LUMII-Syslab/data-shape-server"
-              >data shape server</a
-            >
-            (serving the names for auto-completion) is in
-            <a href="https://github.com/LUMII-Syslab/data-shape-server"
-              >its own repository on GitHub</a
-            >
-            (the actual schema data are currently stored in Postgres databases).
-            <div>
-            The <a href="https://github.com/LUMII-Syslab/data-shape-retrieval-services">data shape retrieval services</a> contain:
-            <ul>
-              <li>
-                the open source code used for populating the DBPedia and wikidata schema
-                databases from their respective SPARQL endpoints, and
-              </li>
-              <li>
-                a utility for importing JSON-formatted schemas obtained from the generic
-                data schema retrieval (cf. Data schema retrieval section).
-    
-              </li>
-            </ul>
-          </div> 
-        </div>
-      </div>
-      <div class="component-element" id="data-retrieval">
-        <h2>Data schema retrieval</h2>
-        <div>
-          The visual query tool is designed to work with user-specified SPARQL
-          endpoints. The
-          <a href="https://github.com/LUMII-Syslab/OBIS-SchemaExtractor">
-          Schema Extractor</a>
-          allows for obtaining a JSON-structured schema for a data set.
-          <br/>
-          NB! Use "version 2" within the schema extractor UI.
-          <br/>
-          To use the created schema with ViziQuer/DSS tool, load it into the tool
-          backend database by the
-          <a href="https://github.com/LUMII-Syslab/data-shape-retrieval-services/tree/main/data-shape-import-service"
-          >data shape import service</a>tool.
-          <br/>
-          Alternatively, the schema can be loaded into
-          <a href="./base/index.html"> classic ViziQuer/web</a>.
-          </div>
-      </div>
-      <div class="component-element" id="data-schema">
-        <h2>Data schemas</h2>
-        <div>
-          The dumps of PostgreSQL databases for data endpoint schema information
-          storing (including, where possible, the class-property and property-property
-          relations):
-          <li>
-            Europeana, a sample moderate size schema:
-            <a href="dss/resources/rdfmeta-europeana-220202-1147.pgsql.gz">
-              PostgreSQL database for Europeana
-            </a>
-          </li>
-          <li>
-            Empty schema (can be used to populate with user data):
-            <a href="dss/resources/rdfmeta-empty-220202-1148.pgsql.gz">
-              Empty PostgreSQL database
-            </a>
-          </li>
-          <li>
-            DBPedia (large, 188 MB):
-            <a href="dss/resources/rdfmeta-dbpedia-210727-1935.pgsql.gz">
-              PostgreSQL database for DBPedia (v0)</a
-            >
-          </li>
-          <br/>
-        </div>
-      </div>
       <div class="component-element" id="short-notation">
         <h2>Short Notation and Tool Explanation</h2>
         <div class="grid">
@@ -439,6 +335,117 @@
                 number of persons related to it either as
                 students or teachers</div>
               <div class="picture"><img src="assets/img/manual_grid12.png"></div>
+            </div>
+          </div>
+        </div>
+        <div class="component-element" id="resources">
+          <h1>Resources</h1>
+          <div class="component-element" id="sample-projects">
+            <h4>Sample Projects</h4>
+            <div>
+              The example projects with configurations over Europeana, DBPedia and
+              wikidata can be uploaded from the following locations (other sample projects
+              are offered during the project initialization, as well):
+              <br />
+              <li>
+                <a href="https://viziquer.lumii.lv/dss/resources/Europeana_Sample.json"
+                  >Europeana sample project.</a>
+              </li>
+              <li>
+                <a href="https://viziquer.lumii.lv/dss/resources/DBPedia_Sample.json"
+                  >DBPedia sample project.</a>
+              </li>
+              <li>
+                <a href="https://viziquer.lumii.lv/dss/resources/Wikidata_Sample.json"
+                  >Wikidata sample project.</a>
+              </li>
+              <br/>
+            </div>
+          </div>
+          <div class="component-element" id="open-source-code">
+            <h4>Open Source Code</h4>
+            <div>
+                Check out the branch
+                <a href="https://github.com/LUMII-Syslab/viziquer/tree/dss-based-schemata"
+                  >dss-based-schemata</a
+                >
+                from
+                <a href="https://github.com/LUMII-Syslab/viziquer"
+                  >Viziquer repository in GitHub</a
+                >
+                for the visual tool version that works with the data shape (schema) server
+                (needed for large data schema support).
+                <br /><br />
+                The
+                <a href="https://github.com/LUMII-Syslab/data-shape-server"
+                  >data shape server</a
+                >
+                (serving the names for auto-completion) is in
+                <a href="https://github.com/LUMII-Syslab/data-shape-server"
+                  >its own repository on GitHub</a
+                >
+                (the actual schema data are currently stored in Postgres databases).
+                <div>
+                The <a href="https://github.com/LUMII-Syslab/data-shape-retrieval-services">data shape retrieval services</a> contain:
+                <ul>
+                  <li>
+                    the open source code used for populating the DBPedia and wikidata schema
+                    databases from their respective SPARQL endpoints, and
+                  </li>
+                  <li>
+                    a utility for importing JSON-formatted schemas obtained from the generic
+                    data schema retrieval (cf. Data schema retrieval section).
+        
+                  </li>
+                </ul>
+              </div> 
+            </div>
+          </div>
+          <div class="component-element" id="data-retrieval">
+            <h4>Data schema retrieval</h4>
+            <div>
+              The visual query tool is designed to work with user-specified SPARQL
+              endpoints. The
+              <a href="https://github.com/LUMII-Syslab/OBIS-SchemaExtractor">
+              Schema Extractor</a>
+              allows for obtaining a JSON-structured schema for a data set.
+              <br/>
+              NB! Use "version 2" within the schema extractor UI.
+              <br/>
+              To use the created schema with ViziQuer/DSS tool, load it into the tool
+              backend database by the
+              <a href="https://github.com/LUMII-Syslab/data-shape-retrieval-services/tree/main/data-shape-import-service"
+              >data shape import service</a>tool.
+              <br/>
+              Alternatively, the schema can be loaded into
+              <a href="./base/index.html"> classic ViziQuer/web</a>.
+              </div>
+          </div>
+          <div class="component-element" id="data-schema">
+            <h4>Data schemas</h4>
+            <div>
+              The dumps of PostgreSQL databases for data endpoint schema information
+              storing (including, where possible, the class-property and property-property
+              relations):
+              <li>
+                Europeana, a sample moderate size schema:
+                <a href="dss/resources/rdfmeta-europeana-220202-1147.pgsql.gz">
+                  PostgreSQL database for Europeana
+                </a>
+              </li>
+              <li>
+                Empty schema (can be used to populate with user data):
+                <a href="dss/resources/rdfmeta-empty-220202-1148.pgsql.gz">
+                  Empty PostgreSQL database
+                </a>
+              </li>
+              <li>
+                DBPedia (large, 188 MB):
+                <a href="dss/resources/rdfmeta-dbpedia-210727-1935.pgsql.gz">
+                  PostgreSQL database for DBPedia (v0)</a
+                >
+              </li>
+              <br/>
             </div>
           </div>
         </div>
