@@ -2,8 +2,10 @@
 
 <div class="row">
   <div class="col-3" id="sidenav">
-    <nav id="navbar" class="h-100 flex-column align-items-stretch pe-4 border-end">
+    <nav id="navbar" class="h-100 flex-column align-items-streach pe-2 border-end">
       <nav class="nav nav-pills flex-column">
+        <a class="nav-link" href="documentation#introduction">Introduction</a>
+        <a class="nav-link" href="documentation#quick-start">Quick Start</a>
 
         <a class="nav-link" href="documentation#short-notation">Short Notation and Tool Explenation</a>
         <a class="nav-link" href="documentation#visual-query">Visual Query Example Hospital</a>
@@ -29,155 +31,7 @@
   <div class="col-9" id="content">
     <div data-bs-targer="#navbar" data-bs-spy="scroll" data-bs-smooth-scroll="true" class="component">
       <div class="component-element" id="introduction">
-        
-      </div>
-      <div class="component-element" id="short-notation">
-        <h2>Short Notation and Tool Explanation</h2>
-        <div class="grid">
-          <div class="text">In ViziQuer a query is a graph with one node
-            marked as the main one (orange round
-            rectangle). In the simplest situations the query
-            shape is a tree with the main node being its
-            root.
-            </div>
-          <div class="picture"><img src="./assets/img/grid_img.png"></div>
-          <div class="text">A query creation can be started by a class, by a
-            property and by an individual (from the pane to
-            the right of the diagram, double-click the item).
-            The lists for classes, properties and individuals
-            can be name-filtered.
-            It is recommended to write searched name
-            fragments case sensitive. It might be necessary
-            to write individual’s name in full.
-            A pattern for a typical individual name is like
-            dbr:Margaret_Thatcher</div>
-            <div class="picture"><img src="./assets/img/grid_img2.png"></div>
-            <div class="text">If the schema information cannot be seen to
-              the right of the diagram, and the ‘Reload tree’
-              button is shown, press the button.
-              </div>
-            <div class="picture"><img src="./assets/img/grid_img3.png"></div>
-            <div class="text_long">When a query creation has been started,
-              <b>Add Link </b> operation (from the right mouse
-              context menu on a node) allows adding
-              connecting links (and in some cases, the link
-              other end class names). <br><br>
-              Simple (join) is usually sufficient for the
-              simplest queries. Subqueries and unions are
-              available, as well. <br><br>
-              Choose the desired link in the dialogue, or
-              search for the name by the name fragment. <br><br>
-              If similar-named properties appear in both dbo:
-              namespace (can be written also without prefix)
-              and dbp: namespace, it is generally
-              recommended to try the dbo: one first.</div>
-            <div class="picture"><img src="./assets/img/grid_img4.png"></div>
-            <div class="picture"><img src="./assets/img/grid_img5.png"></div>
-            <div class="text"><b>Add Field</b> allows adding data fields to query
-              nodes.
-              Choose (select this) as a data field representing
-              the node instance itself.<br><br>
-              <b>Aggregate</b> .. is for aggregate fields (e.g.,
-              counting).
-              Filters are possible, as well.
-              </div>
-            <div class="picture"><img src="./assets/img/grid_img6.png"></div>
-            <div class="text">Data in all fields can be managed from the
-              <b>property pane to the right of the diagram </b> (the
-              node or edge properties appear by clicking on
-              the element).<br><br>
-              <b>Class name (URI)</b> and <b>Instance name (URI)</b> can
-              be typed in the respective fields in the property
-              names. <br><br>
-              Make sure to type the full individual name in
-              the form dbr:Margaret_Thatcher. <br><br>
-              Names without prefixes in the <b>Instance</b> field
-              are considered to be <b> variables </b> (used for naming
-              columns in the output and for references from
-              other query parts). <br><br>
-              For class names the short form (name only) can
-              be used, if the namespace is the default one
-              (i.e., dbo: ).</div>
-            <div class="picture"><img src="./assets/img/grid_img7.png"></div>
-            <div class="text">It is possible also to create several independent
-              query nodes and then by a link from the <b>symbol
-              palette</b> .</div>
-            <div class="picture"><img src="./assets/img/grid_img8.png"></div>
-            <div class="text">Just as for data selection, queries can be used
-              for counting and other kinds of data
-              aggregation.</div>
-            <div class="picture"><img src="./assets/img/grid_img9.png"></div>
-            <div class="text">Counts (and other aggregations) are
-              automatically grouped by any selection fields in
-              any of the nodes (in the example case – (select
-              this) in the node for the class ‘Country’).
-              </div>
-            <div class="picture"><img src="./assets/img/grid_img10.png"></div>
-            <div class="text">A similar query can be created also <b> without
-              class names </b> (the class names are optional; if
-              they are specified, the query would look only at
-              results that belong to the specified classes).
-              </div>
-            <div class="picture"><img src="./assets/img/grid_img11.png"></div>
-            <div class="text"><b>Subqueries</b> allow for richer means of counting
-              in the context (e.g., the spoken languages in the
-              context of a country), allowing further filters
-              and processing on the counted values.
-              </div>
-            <div class="picture"><img src="./assets/img/grid_img12.png"></div>
-            <div class="text">There can be also <b>“free links”</b> in the query
-              (labelled by ++), not corresponding to any link
-              in the data.<br>
-              The nodes on both sides of the link are typically
-              connected by a <b> condition </b>. In the example the
-              alias cgb denotes the birthdate of Coco Gauff;
-              the condition in the TennisPlayer node asks for
-              tennis players younger than Coco Gauff.
-              The mark 'h' at the cgb field specifies this as a
-              helper field - not to be included in the resulting
-              data selection.</div>
-            <div class="picture"><img src="./assets/img/grid_img13.png"></div>
-        </div><br><br>
-      </div>
-      <div class="component-element" id="visual-query">
-        <h2>Visual Query Example Hospital</h2>
-        <div  id="hospital-schema">
-          <h5>Mini-Hospital data schema</h5>
-            The visual query environment needs a data schema defining the available class and property vocabulary, as well as
-            applicability of properties to classes and cardinalities. <br>  
-            The following visualization shows a mini-hospital data schema used in further examples.
-            <img src="./assets/img/Hospital_example.png">
-            The center of the data schema is the Patient class; each patient can have a number of hospital episodes
-            (HospitalEpisode), and a number of outpatient episodes (OutpatientEpisode). There can be a number of treatments
-            in wards (TreatmentInWard) for each hospital episode, numbered starting by 1 in the orderNo attribute. The
-            attribute isLastTr (values “true” or “”false”) marks each treatment in ward as the last one or non-last one for its
-            episode. Further on, every treatment in ward can have a number of associated manipulations (Manipulation).<br><br>
-            There are cardinality marks (e.g. [0..1] or *) at some attributes or links. The attributes or links not having any
-            cardinality mark are assumed to have cardinality 1 that means existence of exactly one required value corresponding
-            to the attribute or the link. <br><br>
-            The classes CManipDescr, CPhysician and CDiagnosis contain classifier values of manipulation descriptions,
-            physicians and diagnoses respectively. There are links to the classifier classes from the main data classes. In the
-            query building process these links can be traversed both in the direction from the data class to the classifier class, as
-            well as in the reverse direction. <br><br>
-            For every hospital episode there can be several admission and several discharge diagnoses specified; one of these
-            diagnoses is marked as the main admission or discharge diagnosis respectively (accessible from the episode by link
-            admissionDiagnosis_main or dischargeDiagnosis_main), all episode diagnoses that are not main admission or
-            discharge diagnoses are extra diagnoses (accessible from the episode by the link admissionDiagnosis_extra or
-            dischargeDiagnosis_extra). The links admissionDiagnosis and dischargeDiagnosis can be used to reach all admission
-            or discharge diagnoses (including the main ones and the extra ones) for an episode, respectively). <br><br>
-            Similarly, for an outpatient episode the outpatientDiagnosis link lists all diagnoses, outpatientDiagnosis_main lists
-            the main diagnosis and outpatientDiagnosis_extra lists the extra diagnoses. <br><br>
-        </div>
-          <div id="example-queries">
-            <h4>Example Queries</h4>
-            <img src="./assets/img/Hospital_example2.png">
-            <img src="./assets/img/Hospital_example3.png">
-            <img src="./assets/img/Hospital_example4.png">
-            <img src="./assets/img/Hospital_example5.png">
-          </div>
-      </div>
-      <div class="component-element" id="user-manual">
-        <h2>User manual for the classic version</h2>
+        <h2 class="component-title">Introduction</h2>
         <div>
           ViziQuer provides visual/diagrammatic environment for ontology-based data query definition and execution.
     To work with ViziQuer one needs:
@@ -215,6 +69,10 @@
     Currently the administration (configuration) rights are assigned to the single user that has been registered
     (signed up) first on a given server. <br><br>
     We recommend Google Chrome for work within ViziQuer query environment.
+        </div>
+      </div>
+      <div class="component-element" id="quick-start">
+        <h2 class="component-title">Quick Start</h2>
         <div id="work-with-projects">
           <h4 >Work with projects</h4>
           After sign-up to the query tool, an empty user environment (tab Projects) is displayed.<br><br>
@@ -263,10 +121,156 @@
       The ViziQuer tool is intended to be able to work with any user-supplied data schema. <br><br>
       The following figure visualizes a simple mini-University ontology, used as a data schema in the following
       examples. <img src="assets/img/manual_img6.png"><br>
-      The following table show some visual query examples over the mini-University ontology.
+      </div>
+      <div class="component-element" id="short-notation">
+        <h2>Short Notation and Tool Explanation</h2>
+          <div>In ViziQuer a query is a graph with one node
+            marked as the main one (orange round
+            rectangle). In the simplest situations the query
+            shape is a tree with the main node being its
+            root.
+            </div>
+          <div><img src="./assets/img/grid_img.png"></div>
+          <div>A query creation can be started by a class, by a
+            property and by an individual (from the pane to
+            the right of the diagram, double-click the item).
+            The lists for classes, properties and individuals
+            can be name-filtered.
+            It is recommended to write searched name
+            fragments case sensitive. It might be necessary
+            to write individual’s name in full.
+            A pattern for a typical individual name is like
+            dbr:Margaret_Thatcher</div>
+            <div><img src="./assets/img/grid_img2.png"></div>
+            <div>If the schema information cannot be seen to
+              the right of the diagram, and the ‘Reload tree’
+              button is shown, press the button.
+              </div>
+            <div><img src="./assets/img/grid_img3.png"></div>
+            <div>When a query creation has been started,
+              <b>Add Link </b> operation (from the right mouse
+              context menu on a node) allows adding
+              connecting links (and in some cases, the link
+              other end class names). <br><br>
+              Simple (join) is usually sufficient for the
+              simplest queries. Subqueries and unions are
+              available, as well. <br><br>
+              Choose the desired link in the dialogue, or
+              search for the name by the name fragment. <br><br>
+              If similar-named properties appear in both dbo:
+              namespace (can be written also without prefix)
+              and dbp: namespace, it is generally
+              recommended to try the dbo: one first.</div>
+            <div class="double_img"><img src="./assets/img/grid_img4.png"></div>
+            <div class="double_img"><img src="./assets/img/grid_img5.png"></div>
+            <div><b>Add Field</b> allows adding data fields to query
+              nodes.
+              Choose (select this) as a data field representing
+              the node instance itself.<br><br>
+              <b>Aggregate</b> .. is for aggregate fields (e.g.,
+              counting).
+              Filters are possible, as well.
+              </div>
+            <div><img src="./assets/img/grid_img6.png"></div>
+            <div>Data in all fields can be managed from the
+              <b>property pane to the right of the diagram </b> (the
+              node or edge properties appear by clicking on
+              the element).<br><br>
+              <b>Class name (URI)</b> and <b>Instance name (URI)</b> can
+              be typed in the respective fields in the property
+              names. <br><br>
+              Make sure to type the full individual name in
+              the form dbr:Margaret_Thatcher. <br><br>
+              Names without prefixes in the <b>Instance</b> field
+              are considered to be <b> variables </b> (used for naming
+              columns in the output and for references from
+              other query parts). <br><br>
+              For class names the short form (name only) can
+              be used, if the namespace is the default one
+              (i.e., dbo: ).</div>
+            <div><img src="./assets/img/grid_img7.png"></div>
+            <div>It is possible also to create several independent
+              query nodes and then by a link from the <b>symbol
+              palette</b> .</div>
+            <div><img src="./assets/img/grid_img8.png"></div>
+            <div>Just as for data selection, queries can be used
+              for counting and other kinds of data
+              aggregation.</div>
+            <div><img src="./assets/img/grid_img9.png"></div>
+            <div>Counts (and other aggregations) are
+              automatically grouped by any selection fields in
+              any of the nodes (in the example case – (select
+              this) in the node for the class ‘Country’).
+              </div>
+            <div><img src="./assets/img/grid_img10.png"></div>
+            <div>A similar query can be created also <b> without
+              class names </b> (the class names are optional; if
+              they are specified, the query would look only at
+              results that belong to the specified classes).
+              </div>
+            <div><img src="./assets/img/grid_img11.png"></div>
+            <div><b>Subqueries</b> allow for richer means of counting
+              in the context (e.g., the spoken languages in the
+              context of a country), allowing further filters
+              and processing on the counted values.
+              </div>
+            <div><img src="./assets/img/grid_img12.png"></div>
+            <div>There can be also <b>“free links”</b> in the query
+              (labelled by ++), not corresponding to any link
+              in the data.<br>
+              The nodes on both sides of the link are typically
+              connected by a <b> condition </b>. In the example the
+              alias cgb denotes the birthdate of Coco Gauff;
+              the condition in the TennisPlayer node asks for
+              tennis players younger than Coco Gauff.
+              The mark 'h' at the cgb field specifies this as a
+              helper field - not to be included in the resulting
+              data selection.</div>
+            <div><img src="./assets/img/grid_img13.png"></div>
+        <br><br>
+      </div>
+      <div class="component-element" id="visual-query">
+        <h2>Visual Query Example Hospital</h2>
+        <div  id="hospital-schema">
+          <h5>Mini-Hospital data schema</h5>
+            The visual query environment needs a data schema defining the available class and property vocabulary, as well as
+            applicability of properties to classes and cardinalities. <br>  
+            The following visualization shows a mini-hospital data schema used in further examples.
+            <img src="./assets/img/Hospital_example.png">
+            The center of the data schema is the Patient class; each patient can have a number of hospital episodes
+            (HospitalEpisode), and a number of outpatient episodes (OutpatientEpisode). There can be a number of treatments
+            in wards (TreatmentInWard) for each hospital episode, numbered starting by 1 in the orderNo attribute. The
+            attribute isLastTr (values “true” or “”false”) marks each treatment in ward as the last one or non-last one for its
+            episode. Further on, every treatment in ward can have a number of associated manipulations (Manipulation).<br><br>
+            There are cardinality marks (e.g. [0..1] or *) at some attributes or links. The attributes or links not having any
+            cardinality mark are assumed to have cardinality 1 that means existence of exactly one required value corresponding
+            to the attribute or the link. <br><br>
+            The classes CManipDescr, CPhysician and CDiagnosis contain classifier values of manipulation descriptions,
+            physicians and diagnoses respectively. There are links to the classifier classes from the main data classes. In the
+            query building process these links can be traversed both in the direction from the data class to the classifier class, as
+            well as in the reverse direction. <br><br>
+            For every hospital episode there can be several admission and several discharge diagnoses specified; one of these
+            diagnoses is marked as the main admission or discharge diagnosis respectively (accessible from the episode by link
+            admissionDiagnosis_main or dischargeDiagnosis_main), all episode diagnoses that are not main admission or
+            discharge diagnoses are extra diagnoses (accessible from the episode by the link admissionDiagnosis_extra or
+            dischargeDiagnosis_extra). The links admissionDiagnosis and dischargeDiagnosis can be used to reach all admission
+            or discharge diagnoses (including the main ones and the extra ones) for an episode, respectively). <br><br>
+            Similarly, for an outpatient episode the outpatientDiagnosis link lists all diagnoses, outpatientDiagnosis_main lists
+            the main diagnosis and outpatientDiagnosis_extra lists the extra diagnoses. <br><br>
+        </div>
+          <div id="example-queries">
+            <h4>Example Queries</h4>
+            <img src="./assets/img/Hospital_example2.png">
+            <img src="./assets/img/Hospital_example3.png">
+            <img src="./assets/img/Hospital_example4.png">
+            <img src="./assets/img/Hospital_example5.png">
           </div>
-          <div class="grid">
-              <div class="text">Select instances of a class, show the values of the
+      </div>
+      <div class="component-element" id="user-manual">
+        <h2>User manual for the classic version</h2>
+        <div>
+          </div>
+              <div>Select instances of a class, show the values of the
                 instance URI (specified by (select this)) and the
                 designated instance attributes (courseCode,
                 courseCredits, courseName).
@@ -277,33 +281,33 @@
                 credits in the query output.
                 Only those instances whose attributes satisfy the
                 given condition are selected.</div>
-              <div class="picture"><img src="assets/img/manual_grid1.png"></div>
-              <div class="text">Count all courses.</div>
-              <div class="picture"><img src="assets/img/manual_grid2.png"></div>
-              <div class="text">Count all courses, grouped by their attribute
+              <div><img src="assets/img/manual_grid1.png"></div>
+              <div>Count all courses.</div>
+              <div><img src="assets/img/manual_grid2.png"></div>
+              <div>Count all courses, grouped by their attribute
                 courseCredits values.</div>
-              <div class="picture"><img src="assets/img/manual_grid3.png"></div>
-              <div class="text">Select student numbers together with students’
+              <div><img src="assets/img/manual_grid3.png"></div>
+              <div>Select student numbers together with students’
                 nationality code (the nationality has to be
                 present for the student).
                 </div>
-              <div class="picture"><img src="assets/img/manual_grid4.png"></div>
-              <div class="text">Select student numbers together with optional
+              <div><img src="assets/img/manual_grid4.png"></div>
+              <div>Select student numbers together with optional
                 students’ nationality code.
                 </div>
-              <div class="picture"><img src="assets/img/manual_grid5.png"></div>
-              <div class="text">Select student numbers of students that do not
+              <div><img src="assets/img/manual_grid5.png"></div>
+              <div>Select student numbers of students that do not
                 have a nationality specified.</div>
-              <div class="picture"><img src="assets/img/manual_grid6.png"></div>
-                <div class="text">Select name and count of taken courses of
+              <div><img src="assets/img/manual_grid6.png"></div>
+                <div>Select name and count of taken courses of
                   students taking at least 3 courses.
                   Note the subquery link (black bullet) considering
                   the courses for each student separately.
                   The subquery selection attributes have to be
                   included into the main query select list, if they
                   are to be included in the query output.</div>
-                <div class="picture"><img src="assets/img/manual_grid7.png"></div>
-              <div class="text">Count registrations (a student can be registered
+                <div><img src="assets/img/manual_grid7.png"></div>
+              <div>Count registrations (a student can be registered
                 for a course) by the year of the course
                 completion date.
                 In general, SPARQL functions over attribute
@@ -312,17 +316,17 @@
               <i>Note. Although the code completion support is
                 currently limited just for entity names, more
                 expressions are supported, if entered correctly.</i></div>
-              <div class="picture"><img src="assets/img/manual_grid8.png"></div>
-              <div class="text">For every student registered at least for one
+              <div><img src="assets/img/manual_grid8.png"></div>
+              <div>For every student registered at least for one
                 course find the student’s mean mark over all
                 courses (= all registrations for a course).</div>
-              <div class="picture"><img src="assets/img/manual_grid9.png"></div>
-              <div class="text">Using property paths notation the student’s
+              <div><img src="assets/img/manual_grid9.png"></div>
+              <div>Using property paths notation the student’s
                 mean mark can be computed within a more
                 compact diagram.
                 </div>
-              <div class="picture"><img src="assets/img/manual_grid10.png"></div>
-              <div class="text">Find all marks for student participation in a
+              <div><img src="assets/img/manual_grid10.png"></div>
+              <div>Find all marks for student participation in a
                 course that have been assigned at least 3 times,
                 together with the number of times the mark has
                 been assigned. <br><br>
@@ -333,11 +337,11 @@
                 The mark ++ marks a query edge that is does not
                 correspond to a data link among instances.
                 </div>
-              <div class="picture"><img src="assets/img/manual_grid11.png"></div>
-              <div class="text">For every course list its name together with the
+              <div><img src="assets/img/manual_grid11.png"></div>
+              <div>For every course list its name together with the
                 number of persons related to it either as
                 students or teachers</div>
-              <div class="picture"><img src="assets/img/manual_grid12.png"></div>
+              <div><img src="assets/img/manual_grid12.png"></div>
             </div>
           </div>
         </div>
@@ -454,24 +458,3 @@
         </div>
     </div>
   </div>
-</div>
-
-<!-- <div class="sidenav">
-  <nav>
-    <ul>
-      <li><a href="/documentation#sample-projects">Sample Projects</a></li>
-      <li><a href="/documentation#open-source-code">Open Source Code</a></li>
-      <li><a href="/documentation#data-retrieval">Data schema retrieval</a></li>
-      <li><a href="/documentation#data-schema">Data Schema</a></li>
-      <li><a href="/documentation#short-notation">Short Notation</a></li>
-      <li>
-        <a href="/documentation#visual-query">Visual Query Example Hospital</a>
-        <ul>
-          <li><a href="/documentation#hospital-schema">Mini-Hospital data schema</a></li>
-          <li><a href="/documentation#example_queries">Example Queries</a></li>
-        </ul>
-      </li>
-      <li><a href="/documentation#user-manual">User manual for the classic version</a></li>
-    </ul>
-  </nav>
-</div> -->

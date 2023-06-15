@@ -4,68 +4,27 @@ $accent-color: rgb(195, 114, 0);
 $text-color: rgb(255, 255, 255);
 $darker-primary-color: rgb(61, 55, 101);
 
-.grid{
-  justify-content: center;
-  position: relative;
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: none;
-  padding: 0;
-  margin: 0;
-  // display: grid;
-  grid-template:
-  "text picture"
-  "text picture"
-  "text picture"
-  "text_long picture1"
-  "text_long picture2";
-  grid-template-columns: 1fr 1fr;
-  justify-content:baseline;
-  align-items: stretch;
-  .text_long{
-    grid-area: text_long;
-  }
-
-  gap: 0.125em;
-  > div{
-    height: 100%;
-    width: 100%;
-    position: relative;
-    // border: black solid 2px;
-    overflow: visible;
-    img{
-      justify-content: center;
-      margin: 0 auto;
-      width: auto;
-    }
-  }
+.double_img{
+  width: 50%;
+  display: inline-block;
 }
 
-#content{
-  padding-bottom: 2rem;
-  margin: none;
-}
+//  
+// .nav-link{
+//   color: $primary-color;
 
-#sidenav{
-  top: 30%;
-// position: fixed;
-}
+//   &:hover{
+//     background-color: $secondary-color;
+//   }
+//   .active{
+//     background-color: $accent-color;
+//     color: $text-color;
+//   }
+// }
 
-.nav-link{
-  color: $primary-color;
-
-  &:hover{
-    background-color: $secondary-color;
-  }
-  .active{
-    background-color: $accent-color;
-    color: $text-color;
-  }
-}
-
-.nav-link.active{
-  background-color: $darker-primary-color;
-}
+// .nav-link.active{
+//   background-color: $darker-primary-color;
+// }
 
 @media only screen and (max-width: 850px) {
   #sidenav{
@@ -77,6 +36,10 @@ $darker-primary-color: rgb(61, 55, 101);
   
 }
 
+img{
+  display: block;
+}
+
 .row{
-  width: 95%;
+  width: 100%;
 }
