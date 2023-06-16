@@ -9,7 +9,7 @@ import { DocumentationComponent } from './documentation/documentation.component'
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'research', component: ResearchComponent},
-  {path: 'querry-environment', component: QuerryEnvironmentComponent},
+  {path: 'online', component: QuerryEnvironmentComponent},
   {path: 'contacts', component: ContactsComponent},
   {path: 'documentation', component: DocumentationComponent},
   {path: '**', redirectTo: ''}

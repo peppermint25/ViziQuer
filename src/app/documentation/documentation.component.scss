@@ -9,22 +9,21 @@ $darker-primary-color: rgb(61, 55, 101);
   display: inline-block;
 }
 
-//  
-// .nav-link{
-//   color: $primary-color;
+.nav-link{
+  color: $primary-color;
 
-//   &:hover{
-//     background-color: $secondary-color;
-//   }
-//   .active{
-//     background-color: $accent-color;
-//     color: $text-color;
-//   }
-// }
+  &:hover{
+    background-color: $secondary-color;
+  }
+  .active{
+    background-color: $accent-color;
+    color: $text-color;
+  }
+}
 
-// .nav-link.active{
-//   background-color: $darker-primary-color;
-// }
+.nav-link.active{
+  background-color: $darker-primary-color;
+}
 
 @media only screen and (max-width: 850px) {
   #sidenav{
@@ -33,7 +32,16 @@ $darker-primary-color: rgb(61, 55, 101);
   #content{
     width: 100%;
   }
+  .double_img{
+    display: block;
+    width: 100%;
+
+  }
   
+}
+
+#navbar{
+  overflow-y: scroll;
 }
 
 img{

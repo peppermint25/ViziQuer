@@ -1,0 +1,44 @@
+$primary-color: rgb(123, 102, 161);
+$secondary-color: rgb(244, 196, 132);
+$accent-color: rgb(195, 114, 0);
+$text-color: rgb(255, 255, 255);
+$darker-primary-color: rgb(61, 55, 101);
+
+
+
+.button-row{
+  margin: 2em 0;
+
+  .btn{
+    margin: 0 5px 0 0 ;
+    background-color: $primary-color;
+    color: white;
+
+    &:hover{
+      background-color: $darker-primary-color;
+      color: $secondary-color;
+    }
+  }
+  .github{
+    background-color: black;
+    display: inline-flex;
+    align-items: center;
+    img{
+      margin-right: 5px;
+      height: 15px;
+      width: 15px;
+    }
+    &:hover{
+      background-color: black;
+    }
+  }
+}
+video{
+  display: block;
+  max-width: 100%;
+}
+.row{
+  width: 95%;
+  margin: 15px auto;
+  padding: 10px;
+}

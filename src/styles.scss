@@ -45,7 +45,6 @@ $darker-primary-color: rgb(61, 55, 101);
 .component{
     display: flex;
     flex-direction: column;
-    // left: 50%;
     margin: 1rem auto;
     padding-bottom: 20px;
     font-size: smaller;
@@ -54,12 +53,7 @@ $darker-primary-color: rgb(61, 55, 101);
         div {
             padding: 0.25rem;
         }
-        // ::before{
-        //     content: '';
-        //     display: block;
-        //     height: 60px;
-        //     margin: -60px 0 0;
-        // }
+
     }
 }
 
