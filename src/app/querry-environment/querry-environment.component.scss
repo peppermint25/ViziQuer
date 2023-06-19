@@ -14,10 +14,11 @@ iframe {
 .btn{
   background-color: $primary-color;
   color: $text-color;
-  border: none;
+  border: 2px solid rgba(61, 55, 101, 0.237);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-size: 1rem;
+  border-radius: 10px;
   cursor: pointer;
   &:hover{
     background-color: $darker-primary-color;
@@ -37,4 +38,18 @@ iframe {
 .container{
   width: 90%;
   padding: 1em 0;
+}
+
+input{
+  // width: 100%;
+  padding: 0.5rem;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid $primary-color;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
+  color: $accent-color;
+}
+
+#copy{
+  margin-left: auto;
 }

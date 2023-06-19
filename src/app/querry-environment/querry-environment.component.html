@@ -1,26 +1,27 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-        <div class="d-flex justify-content-between">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#help_modal">
-                Help
-            </button>
-            <div class="btn-group float-end">
-                <a *ngIf="url_to_open" class="btn" [href]="url_to_open" target="_blank">Open in fullscreen</a>
-                <button type="button" class="btn btn-primary" (click)="reloadUrl()">Reload</button>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Share
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <p>{{getUrl()}}</p>
-                            <a class="btn" href="#" (click)="copyUrl()">Copy URL</a>
-                        </li>
-                    </ul>
+            <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#help_modal">
+                    Help
+                </button>
+                <div class="btn-group float-end">
+
+                    <button type="button" class="btn btn-primary" (click)="reloadUrl()">New Project</button>
+                    <a *ngIf="url_to_open" class="btn" [href]="url_to_open" target="_blank">Open in fullscreen</a>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Share project
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-start">
+                            <li>
+                                <input type="text" disabled value="{{getUrl()}}">
+                                <button type="button" id="copy" class="btn" href="#" (click)="copyUrl()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">Copy URL</button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
     <div class="row">
@@ -34,11 +35,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Help Modal</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Help</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            Information
+            Select a data schema within the settings (icon).<br>
+            Use the right-hand side tabs for starting a query from a class, a property, or an individual (if supported).<br>
+            To visualize a SPARQL query, place it in the SPARQL query area, then choose the 'Visualize SPARQL' context menu item.   
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -46,61 +49,6 @@
         </div>
     </div>
 </div>
-<!-- a button which navigates to the url of variable named url_to_open -->
-<!-- that fu -->
-
-<!-- it needs to be a pop up right below the button which displays current_url value from typescript and it needs a button to copy it -->
-<!-- Make a button called share,and when the user clicks on it, there apprears a window just below it with the url of the iframe from function getUrl() and there is a button to copy that url -->
-<!-- <div class="component-element">
-    <h2>Share</h2>
-    <div>
-        <button class="btn btn-primary" (click)="share()">Share</button>
-    </div>
-</div>
-
-<div class="pop-up">
-    <div class="pop-up-content">
-        <div class="pop-up-header">
-            <span class="close" (click)="closePopUp()">&times;</span>
-            <h2>Share</h2>
-        </div>
-        <div class="pop-up-body">
-            <div>
-                <h3>Current URL</h3>
-                <div>
-                    {{getUrl()}}
-                </div>
-            </div>
-            <div>
-                <h3>Copy URL</h3>
-                <div>
-                    <button class="btn btn-primary" (click)="copyUrl()">Copy URL</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-<!-- <div class="component-element">
-    <h2>Current URL</h2>
-    <div>
-        {{getUrl()}}
-    </div>
-</div>
-<div class="component-element">
-    <h2>Copy URL</h2>
-    <div>
-        <button class="btn btn-primary" (click)="copyUrl()">Copy URL</button>
-    </div>
-</div> -->
-<!-- <div class="component-element"> -->
-<!--     <h2>Open Viziquer</h2> -->
-<!--     <div> -->
-<!--         <button class="btn btn-primary" (click)="openUrl()">Open Viziquer</button> -->
-<!--     </div> -->
-<!-- </div> -->
-
 
 
 
