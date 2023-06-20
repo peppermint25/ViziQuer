@@ -40,10 +40,6 @@ $darker-primary-color: rgb(61, 55, 101);
   
 }
 
-#navbar{
-  overflow-y: scroll;
-}
-
 img{
   display: block;
   margin: auto;
@@ -51,4 +47,15 @@ img{
 
 .row{
   width: 100%;
+  margin: 0px;
+}
+
+// .scrollspy-example-2{
+//   overflow-y: scroll;
+// }
+
+.content{
+
+  height: 85%;
+  padding: 0 1rem;
 }
