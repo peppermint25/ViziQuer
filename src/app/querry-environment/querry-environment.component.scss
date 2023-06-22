@@ -25,6 +25,17 @@ iframe {
   }	
 }
 
+@media only screen and (max-width: 600px){
+  iframe{
+    height: 70vh;
+  };
+  .btn{
+    padding: 0.375rem 0.75rem;
+    font-size: 90%;
+  }
+}
+  
+
 .button-row{
   display: inline;
   width: 80%;
@@ -37,7 +48,9 @@ iframe {
 
 .container{
   width: 90%;
+  max-width: none;
   padding: 1em 0;
+  // margin: 1rem 1rem;
 }
 
 input{
@@ -52,4 +65,8 @@ input{
 
 #copy{
   margin-left: auto;
+}
+
+.custom-tooltip .tooltip {
+  opacity: 0.3;
 }

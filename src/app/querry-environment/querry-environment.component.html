@@ -15,8 +15,8 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-start">
                             <li>
-                                <input type="text" disabled value="{{getUrl()}}">
-                                <button type="button" id="copy" class="btn" href="#" (click)="copyUrl()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">Copy URL</button>
+                                <input type="text" disabled [value]="getUrl()">
+                                <button type="button" id="copy" class="btn" href="#" (click)="copyUrl()" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Copy link" data-bs-custom-class="custom-tooltip">Copy URL</button>
                             </li>
                         </ul>
                     </div>
@@ -49,8 +49,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-

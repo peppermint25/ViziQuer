@@ -15,10 +15,7 @@ $darker-primary-color: rgb(61, 55, 101);
   &:hover{
     background-color: $secondary-color;
   }
-  .active{
-    background-color: $accent-color;
-    color: $text-color;
-  }
+
 }
 
 .nav-link.active{
@@ -57,5 +54,5 @@ img{
 .content{
 
   height: 85%;
-  padding: 0 1rem;
+  padding: 1rem 2rem;
 }

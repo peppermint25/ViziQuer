@@ -1,17 +1,26 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, AfterViewInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Clipboard } from '@angular/cdk/clipboard';
 
 declare var $: any;
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-querry-environment',
   templateUrl: './querry-environment.component.html',
   styleUrls: ['./querry-environment.component.scss']
 })
-export class QuerryEnvironmentComponent  {
+export class QuerryEnvironmentComponent implements AfterViewInit {
+
+  ngAfterViewInit() {
+    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  }
+
   url_to_open: SafeResourceUrl = ''
   viziquer_host = 'https://viziquer.app'
   post_url = this.viziquer_host+'/api/public-diagram?schema=DBpedia';
@@ -44,10 +53,19 @@ export class QuerryEnvironmentComponent  {
 
 
   copyUrl(){
+    const button = document.getElementById('copy');
+    const tooltip = bootstrap.Tooltip.getInstance(button);
+
+    if (tooltip) {
+      tooltip._config.title = 'Link copied';
+      tooltip.show();
+    }
+    
     let current_url = localStorage.getItem('url');
     if(current_url){
       this.clipboard.copy(current_url);    
-    };    
+    };
+    
   }
 
   generate_url(url: string){
