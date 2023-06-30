@@ -9,20 +9,9 @@ $darker-primary-color: rgb(61, 55, 101);
   display: inline-block;
 }
 
-.nav-link{
-  color: $primary-color;
 
-  &:hover{
-    background-color: $secondary-color;
-  }
 
-}
-
-.nav-link.active{
-  background-color: $darker-primary-color;
-}
-
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1000px) {
   #sidenav{
     display: none;
   } 
@@ -37,22 +26,109 @@ $darker-primary-color: rgb(61, 55, 101);
   
 }
 
+// #sidenav{
+//   max-width: 25%;
+// }
+
+.row{
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+#sidenav {
+  flex: 0 0 25%; 
+  padding: 0 12px;
+  transition: flex 0.3s ease;
+}
+
+#content {
+  flex: 0 0 75%;
+  transition: flex 0.3s ease; 
+}
+
+@media (min-width: 1400px) {
+  #sidenav {
+    flex: 0 0 20%; /* Adjust the width for larger screens */
+  }
+
+  #content {
+    flex: 0 0 80%; /* Adjust the width for larger screens */
+  }
+}
+
+@media (min-width: 1900px) {
+  #sidenav {
+    flex: 0 0 15%; /* Adjust the width for larger screens */
+  }
+
+  #content {
+    flex: 0 0 85%; /* Adjust the width for larger screens */
+  }
+}
+
 img{
   display: block;
   margin: auto;
 }
 
-.row{
-  width: 100%;
-  margin: 0px;
-}
 
-// .scrollspy-example-2{
-//   overflow-y: scroll;
-// }
 
 .content{
 
   height: 85%;
   padding: 1rem 2rem;
 }
+
+.nav-link{
+  color: $primary-color;
+  margin: 5px 0;
+  padding: 2px;
+  font-size: 18px;
+  font-weight: 300;
+
+  &:hover{
+    color: $secondary-color;
+  }
+
+}
+
+a.active{
+  color: $darker-primary-color;
+  font-weight: 800;
+}
+
+.custom-sublink {
+  /* Add your custom styles for the sublinks here */
+  /* For example: */
+  margin-left: 10px;
+  padding-left: 10px;
+  /* Add more styles as needed */
+}
+
+.custom-sublink.active {
+  /* Add your custom styles for the active sublink here */
+  /* For example: */
+  font-weight: 700;
+  /* Add more styles as needed */
+}
+
+
+.sublinks-container{
+  margin-left: 15px;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.active {
+  font-weight: bold;
+  color: yelllow;
+}
+

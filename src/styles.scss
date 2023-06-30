@@ -7,7 +7,12 @@ $accent-color: rgb(195, 114, 0);
 $text-color: rgb(255, 255, 255);
 $darker-primary-color: rgb(61, 55, 101);
 
+html{
+    scroll-behavior: smooth;
+}
+
 *{
+
     color-scheme: (light dark);
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     line-height: 1.75;
