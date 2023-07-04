@@ -11,20 +11,7 @@ $darker-primary-color: rgb(61, 55, 101);
 
 
 
-@media only screen and (max-width: 1000px) {
-  #sidenav{
-    display: none;
-  } 
-  #content{
-    width: 100%;
-  }
-  .double_img{
-    display: block;
-    width: 100%;
 
-  }
-  
-}
 
 // #sidenav{
 //   max-width: 25%;
@@ -46,6 +33,26 @@ $darker-primary-color: rgb(61, 55, 101);
 #content {
   flex: 0 0 75%;
   transition: flex 0.3s ease; 
+}
+
+@media only screen and (max-width: 1000px) {
+  *{
+    line-height: 1.5;
+
+  }
+  #sidenav{
+    display: none;
+  } 
+  #content{
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  .double_img{
+    display: block;
+    width: 100%;
+
+  }
+  
 }
 
 @media (min-width: 1400px) {

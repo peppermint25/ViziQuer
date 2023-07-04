@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-3" id="sidenav">
-    <nav id="navbar" class="h-100 flex-column align-items-streach pe-2 border-end">
+  <div id="sidenav">
+    <nav id="navbar" class="h-100 flex-column align-items-streach pe-4 border-end">
       <nav class="nav flex-column">
         <a class="nav-link" href="documentation#introduction">Introduction</a>
         <a class="nav-link" href="documentation#quick-start">Quick Start</a>
@@ -23,12 +23,14 @@
           <a class="nav-link ms-3 my-1" href="documentation#data-retrieval">Data Schema Retrieval</a>
           <a class="nav-link ms-3 my-1" href="documentation#data-schema">Data Schemas</a>
         </nav>
+        
       </nav>
     </nav> 
+    
+    
   </div>
-  <div class="col-9" id="content" style="padding: 0;">
-    <div data-bs-target="#navbar" data-bs-spy="scroll" data-bs-smooth-scroll="true">
-      <div class="content" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" data-bs-smooth-scroll="true" tabindex="0" style="overflow-y: scroll; height: 95vh; padding: 1em">
+  <div id="content" style="padding: 0;" #content>
+    <div data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" data-bs-smooth-scroll="true" class="content scrollspy-example" tabindex="0" style="overflow-y: scroll; height: 95vh; padding: 1em">
       <div class="component-element" id="introduction">
         <h2>Introduction</h2>
         <div>
@@ -121,7 +123,8 @@
       The following figure visualizes a simple mini-University ontology, used as a data schema in the following
       examples. <img src="assets/img/manual_img6.png"><br>
       </div>
-      <div class="component-element" id="short-notation">
+    </div>
+    <div class="component-element" id="short-notation">
         <h2>Short Notation and Tool Explanation</h2>
           <div>In ViziQuer a query is a graph with one node
             marked as the main one (orange round
@@ -231,7 +234,7 @@
       <div class="component-element" id="visual-query">
         <h2>Visual Query Example Hospital</h2>
         <div  id="hospital-schema">
-          <h5>Mini-Hospital data schema</h5>
+          <h4>Mini-Hospital data schema</h4>
             The visual query environment needs a data schema defining the available class and property vocabulary, as well as
             applicability of properties to classes and cardinalities. <br>  
             The following visualization shows a mini-hospital data schema used in further examples.
@@ -267,85 +270,39 @@
       </div>
       <div class="component-element" id="user-manual">
         <h2>User manual for the classic version</h2>
-        <div>
-          </div>
-              <div>Select instances of a class, show the values of the
-                instance URI (specified by (select this)) and the
-                designated instance attributes (courseCode,
-                courseCredits, courseName).
-                The attributes are optional by default; the mark
-                (+) indicates that the corresponding attribute
-                (courseCode) is required.
-                The attribute courseCredits is renamed into
-                credits in the query output.
-                Only those instances whose attributes satisfy the
-                given condition are selected.</div>
-              <div><img src="assets/img/manual_grid1.png"></div>
-              <div>Count all courses.</div>
-              <div><img src="assets/img/manual_grid2.png"></div>
-              <div>Count all courses, grouped by their attribute
-                courseCredits values.</div>
-              <div><img src="assets/img/manual_grid3.png"></div>
-              <div>Select student numbers together with students’
-                nationality code (the nationality has to be
-                present for the student).
-                </div>
-              <div><img src="assets/img/manual_grid4.png"></div>
-              <div>Select student numbers together with optional
-                students’ nationality code.
-                </div>
-              <div><img src="assets/img/manual_grid5.png"></div>
-              <div>Select student numbers of students that do not
-                have a nationality specified.</div>
-              <div><img src="assets/img/manual_grid6.png"></div>
-                <div>Select name and count of taken courses of
-                  students taking at least 3 courses.
-                  Note the subquery link (black bullet) considering
-                  the courses for each student separately.
-                  The subquery selection attributes have to be
-                  included into the main query select list, if they
-                  are to be included in the query output.</div>
-                <div><img src="assets/img/manual_grid7.png"></div>
-              <div>Count registrations (a student can be registered
-                for a course) by the year of the course
-                completion date.
-                In general, SPARQL functions over attribute
-                values are allowed in ViziQuer expressions
-                (either in attribute or condition fields).
-              <i>Note. Although the code completion support is
-                currently limited just for entity names, more
-                expressions are supported, if entered correctly.</i></div>
+          <div>Select instances of a class, show the values of the instance URI (specified by (select this)) and the designated instance attributes (courseCode, courseCredits, courseName). The attributes are optional by default; the mark (+) indicates that the corresponding attribute (courseCode) is required. The attribute courseCredits is renamed into credits in the query output. Only those instances whose attributes satisfy the given condition are selected.</div>
+            <div><img src="assets/img/manual_grid1.png"></div>
+            <div>Count all courses.</div>
+            <div><img src="assets/img/manual_grid2.png"></div>
+            <div>Count all courses, grouped by their attributecourseCredits values.</div>
+            <div><img src="assets/img/manual_grid3.png"></div>
+            <div>Select student numbers together with students’ nationality code (the nationality has to be present for the student).</div>
+            <div><img src="assets/img/manual_grid4.png"></div>
+            <div>Select student numbers together with optional students’ nationality code.
+            </div>
+            <div><img src="assets/img/manual_grid5.png"></div>
+            <div>Select student numbers of students that do not have a nationality specified.</div>
+            <div><img src="assets/img/manual_grid6.png"></div>
+            <div>Select name and count of taken courses of students taking at least 3 courses. Note the subquery link (black bullet) considering the courses for each student separately. The subquery selection attributes have to be included into the main query select list, if they are to be included in the query output.</div>
+            <div><img src="assets/img/manual_grid7.png"></div>
+            <div>Count registrations (a student can be registered for a course) by the year of the course completion date. In general, SPARQL functions over attribute values are allowed in ViziQuer expressions (either in attribute or condition fields). <i>Note. Although the code completion support is currently limited just for entity names, more expressions are supported, if entered correctly.</i></div>
               <div><img src="assets/img/manual_grid8.png"></div>
-              <div>For every student registered at least for one
-                course find the student’s mean mark over all
-                courses (= all registrations for a course).</div>
+              <div>For every student registered at least for one course find the student’s mean mark over all courses (= all registrations for a course).</div>
               <div><img src="assets/img/manual_grid9.png"></div>
-              <div>Using property paths notation the student’s
-                mean mark can be computed within a more
-                compact diagram.
+              <div>Using property paths notation the student’s mean mark can be computed within a more compact diagram.
                 </div>
               <div><img src="assets/img/manual_grid10.png"></div>
-              <div>Find all marks for student participation in a
-                course that have been assigned at least 3 times,
-                together with the number of times the mark has
-                been assigned. <br><br>
-                The subquery counts the registrations per
-                assigned mark; the outer query consisting of a
-                single non-data node corresponds to the outer
-                query level that does the filtering. <br><br>
-                The mark ++ marks a query edge that is does not
-                correspond to a data link among instances.
+              <div>Find all marks for student participation in a course that have been assigned at least 3 times, together with the number of times the mark has been assigned. <br><br> The subquery counts the registrations per assigned mark; the outer query consisting of a single non-data node corresponds to the outer query level that does the filtering. <br><br> The mark ++ marks a query edge that is does not correspond to a data link among instances.
                 </div>
               <div><img src="assets/img/manual_grid11.png"></div>
               <div>For every course list its name together with the
                 number of persons related to it either as
                 students or teachers</div>
               <div><img src="assets/img/manual_grid12.png"></div>
-            </div>
-          </div>
-          <div class="component-element" id="resources">
-            <h1>Resources</h1>
-            <div class="component-element" id="sample-projects">
+      </div>
+      <div class="component-element" id="resources">
+        <h2>Resources</h2>
+          <div class="component-element" id="sample-projects">
               <h4>Sample Projects</h4>
               <div>
                 The example projects with configurations over Europeana, DBPedia and
@@ -450,65 +407,12 @@
                     PostgreSQL database for DBPedia (v0)</a
                   >
                 </li>
-                <br/>
+              <br>
               </div>
             </div>
           </div>
         </div>
-    </div>
   </div>
+</div>
 
-  <!-- <div class="row">
-    <div class="col-4">
-      <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
-        <nav class="nav nav-pills flex-column">
-          <a class="nav-link" href="#item-1">Item 1</a>
-          <nav class="nav nav-pills flex-column">
-            <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
-            <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
-          </nav>
-          <a class="nav-link" href="#item-2">Item 2</a>
-          <a class="nav-link" href="#item-3">Item 3</a>
-          <nav class="nav nav-pills flex-column">
-            <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
-            <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
-          </nav>
-        </nav>
-      </nav>
-    </div>
   
-    <div class="col-8">
-      <div class="scrollspy-example-2" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0" style="overflow-y: scroll; height: 400px;">
-        <div id="item-1">
-          <h4>Item 1</h4>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed delectus, voluptates voluptas corrupti ea corporis fugiat rem exercitationem facere necessitatibus quia cumque enim, magnam nostrum repellat voluptatum eveniet eum, illo doloribus odit fugit vitae. Molestiae vitae ab aspernatur odio eligendi, delectus sequi, veritatis eaque eius praesentium voluptatibus enim, a debitis repellendus. Delectus impedit neque ex, in hic facere fugit labore eos sed, voluptate perspiciatis architecto adipisci illum pariatur ad saepe quod ab dolorum nam vitae, cum sequi quo sint sunt. Doloremque sequi porro pariatur eaque modi magni quibusdam consequatur ab corrupti, quae repellat possimus. Ex quis repellat, obcaecati iure pariatur eaque odit consequatur nostrum cupiditate quae ratione aspernatur alias unde labore laudantium quaerat aperiam laboriosam cum, distinctio beatae doloribus officia. Enim modi pariatur sint maiores?</p>
-        </div>
-        <div id="item-1-1">
-          <h5>Item 1-1</h5>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vitae voluptatem minima atque illo perspiciatis laborum inventore, accusamus nesciunt modi sequi dolores dolorum odio quidem vel similique quis praesentium saepe ratione architecto, cupiditate sapiente porro. Maiores harum molestiae atque praesentium nostrum fugiat ipsum corrupti magnam perspiciatis laborum corporis porro at rem explicabo reiciendis fugit, ipsam eum ratione laudantium id excepturi quibusdam. Blanditiis voluptate harum fugiat aliquam illo eum. Blanditiis, eligendi omnis. Amet dolorem ipsum voluptates ducimus suscipit neque eius, doloribus debitis deserunt molestias facere doloremque at maiores dolores et quos animi cumque? Sapiente autem veniam, molestias voluptatibus, exercitationem dolor, iusto aut repellendus neque impedit consectetur cupiditate eius illo? Earum deserunt nesciunt quidem, magnam asperiores temporibus dolorem beatae. Nisi obcaecati incidunt ipsum culpa quo? Deserunt mollitia impedit, qui odit similique temporibus aliquam ea quos voluptates tenetur architecto, maiores aliquid cum, at error ipsam repudiandae. Id est quasi deserunt aperiam molestiae? Ullam?/p>
-        </div>
-        <div id="item-1-2">
-          <h5>Item 1-2</h5>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt excepturi odit quaerat incidunt, quod modi similique reprehenderit corporis, est iure perferendis odio qui quae ab. Maiores quia tempore repellat impedit repudiandae voluptate obcaecati minus dolor, sit suscipit cumque voluptatibus quos, eius eaque delectus, ullam vel in accusamus? Sit, nulla repudiandae?</p>
-        </div>
-        <div id="item-2">
-          <h4>Item 2</h4>
-          <p>...</p>
-        </div>
-        <div id="item-3">
-          <h4>Item 3</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ea sit similique nemo vitae repellat commodi excepturi voluptatem! Sed eius fugit expedita veniam optio laborum! Magni recusandae libero dolor et, numquam corporis iusto laborum pariatur labore maxime magnam amet voluptas vel aliquam praesentium hic voluptatibus error tenetur consectetur accusantium. Quidem nulla esse repudiandae obcaecati veritatis sapiente iusto animi rerum voluptate vero, minima quis, adipisci iure quasi, dolores alias labore? Saepe obcaecati ratione expedita vitae delectus!</p>
-        </div>
-        <div id="item-3-1">
-          <h5>Item 3-1</h5>
-          <p>...</p>
-        </div>
-        <div id="item-3-2">
-          <h5>Item 3-2</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto dignissimos perferendis harum nam nobis tenetur ipsa deserunt et, itaque cupiditate soluta quae est laudantium qui perspiciatis aperiam tempore accusantium dolore voluptatum ea, beatae commodi sed non. Odit alias exercitationem placeat pariatur, doloremque vitae non perferendis possimus unde fugit aspernatur? Aliquam voluptate doloribus quaerat iste iusto iure quod quia necessitatibus molestiae incidunt earum, ratione est minus quisquam aut laborum ducimus distinctio quo? Ratione dolore pariatur ad dolorum debitis odit! Magnam dicta quidem dolor voluptatibus animi hic pariatur a voluptas aperiam excepturi, nostrum nobis similique repellat temporibus, omnis deleniti reprehenderit officiis.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-   -->
