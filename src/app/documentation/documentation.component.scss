@@ -9,14 +9,6 @@ $darker-primary-color: rgb(61, 55, 101);
   display: inline-block;
 }
 
-
-
-
-
-// #sidenav{
-//   max-width: 25%;
-// }
-
 .row{
   width: 100%;
   margin: 0px;
@@ -57,21 +49,21 @@ $darker-primary-color: rgb(61, 55, 101);
 
 @media (min-width: 1400px) {
   #sidenav {
-    flex: 0 0 20%; /* Adjust the width for larger screens */
+    flex: 0 0 20%;
   }
 
   #content {
-    flex: 0 0 80%; /* Adjust the width for larger screens */
+    flex: 0 0 80%;
   }
 }
 
 @media (min-width: 1900px) {
   #sidenav {
-    flex: 0 0 15%; /* Adjust the width for larger screens */
+    flex: 0 0 15%;
   }
 
   #content {
-    flex: 0 0 85%; /* Adjust the width for larger screens */
+    flex: 0 0 85%;
   }
 }
 
@@ -80,12 +72,26 @@ img{
   margin: auto;
 }
 
-
+h4, h2:not(#introduction){
+  margin: 10px 0;
+}
 
 .content{
 
   height: 85%;
   padding: 1rem 2rem;
+ul {
+  list-style: none; 
+}
+
+ul li::before {
+  content: "\2022";
+  color: $accent-color;
+  font-weight: bold; 
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
 }
 
 .nav-link{
@@ -107,31 +113,17 @@ a.active{
 }
 
 .custom-sublink {
-  /* Add your custom styles for the sublinks here */
-  /* For example: */
   margin-left: 10px;
   padding-left: 10px;
-  /* Add more styles as needed */
 }
 
 .custom-sublink.active {
-  /* Add your custom styles for the active sublink here */
-  /* For example: */
   font-weight: 700;
-  /* Add more styles as needed */
 }
 
 
 .sublinks-container{
   margin-left: 15px;
-}
-
-li{
-  list-style: none;
-}
-
-a{
-  text-decoration: none;
 }
 
 .active {

@@ -16,8 +16,9 @@ html{
     color-scheme: (light dark);
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     line-height: 1.75;
-    a{
-        color: $accent-color;
+    a:not(.navbar a):not(#sidenav a):not(.btn){
+        color: $accent-color !important;
+        text-decoration: none !important;
     }
 
     img{

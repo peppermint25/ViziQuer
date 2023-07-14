@@ -13,6 +13,7 @@ import { DocumentationComponent } from './documentation/documentation.component'
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    [RouterModule]
+    [RouterModule],
+    [NgbModule]
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,131 +1,169 @@
 <div class="row">
-  <div id="sidenav">
-    <nav id="navbar" class="h-100 flex-column align-items-streach pe-4 border-end">
+  <div id="sidenav" ngbScrollSpy>
+    <nav [ngbScrollSpyMenu]="spy"id="navbar" class="h-100 flex-column align-items-streach pe-4 border-end">
       <nav class="nav flex-column">
-        <a class="nav-link" href="documentation#introduction">Introduction</a>
-        <a class="nav-link" href="documentation#quick-start">Quick Start</a>
+        <a class="nav-link"  ngbScrollSpyItem="introduction">Introduction</a>
+        <a class="nav-link" ngbScrollSpyItem="quick-start">Quick Start</a>
         <nav class="nav flex-column">
-          <a class="nav-link ms-3 my-1" href="documentation#work-with-projects">Work with projects</a>
-          <a class="nav-link ms-3 my-1" href="documentation#work-with-diagrams">Work with diagrams</a>
+          <a class="nav-link ms-3 my-1"  ngbScrollSpyItem="work-with-projects" parent="quick-start">Work with projects</a>
+          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="work-with-diagrams" parent="quick-start">Work with diagrams</a>
         </nav>
-        <a class="nav-link" href="documentation#short-notation">Short Notation and Tool Explenation</a>
-        <a class="nav-link" href="documentation#visual-query">Visual Query Example Hospital</a>
+        <a class="nav-link" ngbScrollSpyItem="short-notation">Short Notation and Tool Explenation</a>
+        <a class="nav-link" ngbScrollSpyItem="visual-query">Visual Query Example Hospital</a>
         <nav class="nav flex-column">
-          <a class="nav-link ms-3 my-1" href="documentation#hospital-schema">Mini-Hospital data schema</a>
-          <a class="nav-link ms-3 my-1" href="documentation#example-queries">Example Queries </a>
+          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="hospital-schema" parent="visual-query">Mini-Hospital data schema</a>
+          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="example-queries" parent="visual-query">Example Queries </a>
         </nav>
-        <a class="nav-link" href="documentation#user-manual">User Manual for Classic Version</a>
-
-        <a class="nav-link" href="documentation#resources">Resources</a>
+        <a class="nav-link" ngbScrollSpyItem="user-manual">User Manual for Classic Version</a>
+        <a class="nav-link" ngbScrollSpyItem="resources">Resources</a>
         <nav class="nav flex-column">
-          <a class="nav-link ms-3 my-1" href="documentation#sample-projects">Sample Projects</a>
-          <a class="nav-link ms-3 my-1" href="documentation#open-source-code">Open Source Code</a>
-          <a class="nav-link ms-3 my-1" href="documentation#data-retrieval">Data Schema Retrieval</a>
-          <a class="nav-link ms-3 my-1" href="documentation#data-schema">Data Schemas</a>
+          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="sample-projects" parent="resources">Sample Projects</a>
+          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="open-source-code" parent="resources">Open Source Code</a>
+          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="data-retrieval" parent="resources">Data Schema Retrieval</a>
+          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="data-schema" parent="resources">Data Schemas</a>
         </nav>
-        
       </nav>
     </nav> 
     
     
   </div>
   <div id="content" style="padding: 0;" #content>
-    <div data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" data-bs-smooth-scroll="true" class="content scrollspy-example" tabindex="0" style="overflow-y: scroll; height: 95vh; padding: 1em">
-      <div class="component-element" id="introduction">
-        <h2>Introduction</h2>
-        <div>
-          ViziQuer provides visual/diagrammatic environment for ontology-based data query definition and execution.
-    To work with ViziQuer one needs:
-    <ul>
-      <li>
-        An ontology (a data schema1), and
-      </li>
-      <li>
-        A connection to SPARQL endpoint (if the generated SPARQL queries are to be directly executed from the ViziQuer environment).
-      </li>
-    </ul>
-    The data schema specifies:
-    <ul>
-      <li>
-        the local name to full URI mapping for classes and properties,
-      </li>
-      <li>
-        subclass and subproperty relations,
-      </li>
-      <li>
-        class-to-property connections, and
-    
-      </li>
-      <li>
-        cardinalities (important to determine, if maximum cardinality for a property in the context of a class
-        is 1, or not).
-      </li>
-    </ul>
-    As of ViziQuer 0.2.2, there is option to have pre-configured data schemas and even full initial projects
-    (including data schema, project parameters (endpoint configuration and others), and visual query examples).<br><br>
-    There is public ViziQuer environment available from ViziQuer main page with user self-registration option
-    available. <br><br>
-    The ViziQuer software is open source (MIT licence), the instructions for local tool setup are available at the
-    ViziQuer GitHub page: <a href="https://github.com/LUMII-Syslab/viziquer">https://github.com/LUMII-Syslab/viziquer</a> <br><br>
-    Currently the administration (configuration) rights are assigned to the single user that has been registered
-    (signed up) first on a given server. <br><br>
-    We recommend Google Chrome for work within ViziQuer query environment.
-        </div>
-      </div>
-      <div class="component-element" id="quick-start">
-        <h2 class="component-title">Quick Start</h2>
-        <div id="work-with-projects">
-          <h4 >Work with projects</h4>
-          After sign-up to the query tool, an empty user environment (tab Projects) is displayed.<br><br>
-          Choose ‘New project’, then enter the name you wish for the project and choose the tool from the dropdown menu (should there be no tools available in a local installation, ask the system administrator to
-          complete the tool environment setup, as described in <a href="https://github.com/LUMII-Syslab/viziquer">https://github.com/LUMII-Syslab/viziquer</a>). <br><br>
-          Should the pre-configured data schemas and/or projects be installed at the endpoint, the user can choose using some of the available options during the new project dialogue. <img src="assets/img/manual_img1.png"><br>
-          Upon successful creation of a project, its icon becomes available:<img src="assets/img/manual_img2.png"> <i>Note. On the upper right hand of the project icon there is a small menu allowing to Duplicate, Edit (e.g.
-            change the name), Delete and Leave the project (in case of shared use of the project).</i><br><br>
-            Click the project icon, or Diagrams menu item on the left to get into the project environment.<img src="assets/img/manual_img3.png"><br>
-            To make the project environment working, upload the data schema (a JSON file) (#1) and tune the project
-      settings (#2), in particular, a SPARQL endpoint and the named graph, as well as query engine type (OpenLink
-      Virtuoso by default, General SPARQL option available). <br><br>
-      You can also import a project from a project JSON serialization (#4; the diagrams from the imported project
-      are added to the diagrams of the current project). The projects saved from this or from some other server
-      can be imported (there is requirement that tool configurations on both projects coincide (are based on the
-      same tool JSON configuration files)). <br>
-      
-      <i>Note. The data ontology is currently not included in a project JSON serialization, it has to be set up
-        separately after project upload.</i><br><br>
-        #3 allows to save the project into its JSON serialization (currently may work better on Firefox, than Chrome).
-      #5 is migration of the project onto new version of the query tool configuration.
-        </div>
-    <div id="work-with-diagrams">
-            <h4 >Work with diagrams</h4>
-            A project may have several query diagrams, each holding a single or multiple queries. <br><br>
-      Each query in a diagram is a connected component that has a single main class node (orange round
-      rectangle) and possibly a number of condition classes. <br><br>
-      Each query shall have a spanning tree of all its nodes and edges that are not marked as condition edges (for
-      instance, if a query does not have condition edges, it has to have a tree shape with the main query class
-      being its root). The condition edges are added on top of the query tree structure. <br><br>
-      A project diagram environment consists of diagram menu, symbol palette, visual query area, SPARQL /
-      Results tabs and a property pane, initially showing the classes of the uploaded ontology (data schema). <br><br>
-      The ontology classes are shown in the property pane whenever there is no element or element group
-      selected in the visual query pane (a click on the empty space in the diagram shall bring up the class list into
-      the property pane). <br><br>
-      A double-click on the class name in the property pane inserts a new main query node, based on this class,
-      into the visual query area.
-      <img src="assets/img/manual_img4.png"> <br><br>
-      Another way to start a query drawing is to click on the orange class seed in the symbol palette and then
-      draw a class symbol within the visual diagram area, followed by choosing the class name in the class
-      compartment in the node property pane.<br><br>
-      Should a single node or single edge be selected/focused in the visual query area, the property pane shall
-      show the properties of the selected/focused node or edge. <br><br>
-      The following figure illustrates the query environment in action.
-      <img src="assets/img/manual_img5.png"><br>
-      The ViziQuer tool is intended to be able to work with any user-supplied data schema. <br><br>
-      The following figure visualizes a simple mini-University ontology, used as a data schema in the following
-      examples. <img src="assets/img/manual_img6.png"><br>
-      </div>
-    </div>
-    <div class="component-element" id="short-notation">
-        <h2>Short Notation and Tool Explanation</h2>
+    <div  ngbScrollSpy #spy="ngbScrollSpy"
+    class="content scrollspy-example"
+
+    style="overflow-y: scroll; height: 95vh; padding: 1em">
+    <h2 ngbScrollSpyFragment="introduction">Introduction</h2>
+      <p>
+        ViziQuer provides visual/diagrammatic environment for ontology-based data query definition and execution. To work with ViziQuer one needs:
+      </p>
+        <ul>
+          <li>
+            An ontology (a data schema<sup>1</sup>), and
+          </li>
+          <li>A connection to SPARQL endpoint (if the generated SPARQL queries are to be directly executed from the ViziQuer environment).
+          </li>
+        </ul>
+        <p>
+          The data schema specifies:
+        </p>
+        <ul>
+          <li>the local name to full URI mapping for classes and properties,
+          </li>
+          <li>
+            subclass and subproperty relations,
+          </li>
+          <li>class-to-property connections, and          
+          </li>
+          <li>cardinalities (important to determine, if maximum cardinality for a property in the context of a classis 1, or not).
+          </li>
+        </ul>
+        <p>
+          As of ViziQuer 0.2.2, there is option to have pre-configured data schemas and even full initial projects (including data schema, project parameters (endpoint configuration and others), and visual query examples).<br><br> There is public ViziQuer environment available from ViziQuer main page with user self-registration option available. <br><br>
+          The ViziQuer software is open source (MIT licence), the instructions for local tool setup are available at the
+          ViziQuer GitHub page: <a href="https://github.com/LUMII-Syslab/viziquer">https://github.com/LUMII-Syslab/viziquer</a> <br><br>
+          Currently the administration (configuration) rights are assigned to the single user that has been registered (signed up) first on a given server. <br><br>
+          We recommend Google Chrome for work within ViziQuer query environment.
+        </p>
+          <!-- <ngb-accordion>
+            <ngb-panel>
+              <ng-template ngbPanelTitle>
+                <h2 ngbScrollSpyFragment="quick-start">Quick Start</h2>
+              </ng-template>
+
+              <ng-template ngbPanelContent>
+                <h4 ngbScrollSpyFragment="work-with-projects">Work with projects</h4>
+          <p>
+            After sign-up to the query tool, an empty user environment (tab Projects) is displayed.<br><br>
+            Choose ‘New project’, then enter the name you wish for the project and choose the tool from the dropdown menu (should there be no tools available in a local installation, ask the system administrator to
+            complete the tool environment setup, as described in <a href="https://github.com/LUMII-Syslab/viziquer">https://github.com/LUMII-Syslab/viziquer</a>). <br><br>
+            Should the pre-configured data schemas and/or projects be installed at the endpoint, the user can choose using some of the available options during the new project dialogue. <img src="assets/img/manual_img1.png"><br>
+            Upon successful creation of a project, its icon becomes available:<img src="assets/img/manual_img2.png"> <i>Note. On the upper right hand of the project icon there is a small menu allowing to Duplicate, Edit (e.g.
+              change the name), Delete and Leave the project (in case of shared use of the project).</i><br><br>
+              Click the project icon, or Diagrams menu item on the left to get into the project environment.<img src="assets/img/manual_img3.png"><br>
+              To make the project environment working, upload the data schema (a JSON file) (#1) and tune the project
+        settings (#2), in particular, a SPARQL endpoint and the named graph, as well as query engine type (OpenLink
+        Virtuoso by default, General SPARQL option available). <br><br>
+        You can also import a project from a project JSON serialization (#4; the diagrams from the imported project are added to the diagrams of the current project). The projects saved from this or from some other server can be imported (there is requirement that tool configurations on both projects coincide (are based on the same tool JSON configuration files)). <br>
+        <i>Note. The data ontology is currently not included in a project JSON serialization, it has to be set up separately after project upload.</i><br><br>
+          #3 allows to save the project into its JSON serialization (currently may work better on Firefox, than Chrome). #5 is migration of the project onto new version of the query tool configuration.
+          </p>
+              <h4 ngbScrollSpyFragment="work-with-diagrams">Work with diagrams</h4>
+              <p>
+                A project may have several query diagrams, each holding a single or multiple queries. <br><br>
+                Each query in a diagram is a connected component that has a single main class node (orange round
+                rectangle) and possibly a number of condition classes. <br><br>
+                Each query shall have a spanning tree of all its nodes and edges that are not marked as condition edges (for
+                instance, if a query does not have condition edges, it has to have a tree shape with the main query class
+                being its root). The condition edges are added on top of the query tree structure. <br><br>
+                A project diagram environment consists of diagram menu, symbol palette, visual query area, SPARQL /
+                Results tabs and a property pane, initially showing the classes of the uploaded ontology (data schema). <br><br>
+                The ontology classes are shown in the property pane whenever there is no element or element group
+                selected in the visual query pane (a click on the empty space in the diagram shall bring up the class list into
+                the property pane). <br><br>
+                A double-click on the class name in the property pane inserts a new main query node, based on this class,
+                into the visual query area.
+                <img src="assets/img/manual_img4.png"> <br><br>
+                Another way to start a query drawing is to click on the orange class seed in the symbol palette and then
+                draw a class symbol within the visual diagram area, followed by choosing the class name in the class
+                compartment in the node property pane.<br><br>
+                Should a single node or single edge be selected/focused in the visual query area, the property pane shall
+                show the properties of the selected/focused node or edge. <br><br>
+                The following figure illustrates the query environment in action.
+                <img src="assets/img/manual_img5.png"><br>
+                The ViziQuer tool is intended to be able to work with any user-supplied data schema. <br><br>
+                The following figure visualizes a simple mini-University ontology, used as a data schema in the following
+                examples. <img src="assets/img/manual_img6.png"><br>
+              </p>
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion> -->
+          <h2 ngbScrollSpyFragment="quick-start">Quick Start</h2>
+          <h4 ngbScrollSpyFragment="work-with-projects">Work with projects</h4>
+          <p>
+            After sign-up to the query tool, an empty user environment (tab Projects) is displayed.<br><br>
+            Choose ‘New project’, then enter the name you wish for the project and choose the tool from the dropdown menu (should there be no tools available in a local installation, ask the system administrator to
+            complete the tool environment setup, as described in <a href="https://github.com/LUMII-Syslab/viziquer">https://github.com/LUMII-Syslab/viziquer</a>). <br><br>
+            Should the pre-configured data schemas and/or projects be installed at the endpoint, the user can choose using some of the available options during the new project dialogue. <img src="assets/img/manual_img1.png"><br>
+            Upon successful creation of a project, its icon becomes available:<img src="assets/img/manual_img2.png"> <i>Note. On the upper right hand of the project icon there is a small menu allowing to Duplicate, Edit (e.g.
+              change the name), Delete and Leave the project (in case of shared use of the project).</i><br><br>
+              Click the project icon, or Diagrams menu item on the left to get into the project environment.<img src="assets/img/manual_img3.png"><br>
+              To make the project environment working, upload the data schema (a JSON file) (#1) and tune the project
+        settings (#2), in particular, a SPARQL endpoint and the named graph, as well as query engine type (OpenLink
+        Virtuoso by default, General SPARQL option available). <br><br>
+        You can also import a project from a project JSON serialization (#4; the diagrams from the imported project are added to the diagrams of the current project). The projects saved from this or from some other server can be imported (there is requirement that tool configurations on both projects coincide (are based on the same tool JSON configuration files)). <br>
+        <i>Note. The data ontology is currently not included in a project JSON serialization, it has to be set up separately after project upload.</i><br><br>
+          #3 allows to save the project into its JSON serialization (currently may work better on Firefox, than Chrome). #5 is migration of the project onto new version of the query tool configuration.
+          </p>
+              <h4 ngbScrollSpyFragment="work-with-diagrams">Work with diagrams</h4>
+              <p>
+                A project may have several query diagrams, each holding a single or multiple queries. <br><br>
+                Each query in a diagram is a connected component that has a single main class node (orange round
+                rectangle) and possibly a number of condition classes. <br><br>
+                Each query shall have a spanning tree of all its nodes and edges that are not marked as condition edges (for
+                instance, if a query does not have condition edges, it has to have a tree shape with the main query class
+                being its root). The condition edges are added on top of the query tree structure. <br><br>
+                A project diagram environment consists of diagram menu, symbol palette, visual query area, SPARQL /
+                Results tabs and a property pane, initially showing the classes of the uploaded ontology (data schema). <br><br>
+                The ontology classes are shown in the property pane whenever there is no element or element group
+                selected in the visual query pane (a click on the empty space in the diagram shall bring up the class list into
+                the property pane). <br><br>
+                A double-click on the class name in the property pane inserts a new main query node, based on this class,
+                into the visual query area.
+                <img src="assets/img/manual_img4.png"> <br><br>
+                Another way to start a query drawing is to click on the orange class seed in the symbol palette and then
+                draw a class symbol within the visual diagram area, followed by choosing the class name in the class
+                compartment in the node property pane.<br><br>
+                Should a single node or single edge be selected/focused in the visual query area, the property pane shall
+                show the properties of the selected/focused node or edge. <br><br>
+                The following figure illustrates the query environment in action.
+                <img src="assets/img/manual_img5.png"><br>
+                The ViziQuer tool is intended to be able to work with any user-supplied data schema. <br><br>
+                The following figure visualizes a simple mini-University ontology, used as a data schema in the following
+                examples. <img src="assets/img/manual_img6.png"><br>
+              </p>
+    <div class="component-element">
+        <h2 ngbScrollSpyFragment="short-notation">
+            Short Notation and Tool Explanation</h2>
           <div>In ViziQuer a query is a graph with one node
             marked as the main one (orange round
             rectangle). In the simplest situations the query
@@ -231,12 +269,10 @@
             <div><img src="./assets/img/grid_img13.png"></div>
         <br><br>
       </div>
-      <div class="component-element" id="visual-query">
-        <h2>Visual Query Example Hospital</h2>
-        <div  id="hospital-schema">
-          <h4>Mini-Hospital data schema</h4>
-            The visual query environment needs a data schema defining the available class and property vocabulary, as well as
-            applicability of properties to classes and cardinalities. <br>  
+        <h2 ngbScrollSpyFragment="visual-query">Visual Query Example Hospital</h2>
+          <h4 ngbScrollSpyFragment="hospital-schema">Mini-Hospital data schema</h4>
+          <p>
+            The visual query environment needs a data schema defining the available class and property vocabulary, as well as applicability of properties to classes and cardinalities. <br>  
             The following visualization shows a mini-hospital data schema used in further examples.
             <img src="./assets/img/Hospital_example.png">
             The center of the data schema is the Patient class; each patient can have a number of hospital episodes
@@ -244,32 +280,21 @@
             in wards (TreatmentInWard) for each hospital episode, numbered starting by 1 in the orderNo attribute. The
             attribute isLastTr (values “true” or “”false”) marks each treatment in ward as the last one or non-last one for its
             episode. Further on, every treatment in ward can have a number of associated manipulations (Manipulation).<br><br>
-            There are cardinality marks (e.g. [0..1] or *) at some attributes or links. The attributes or links not having any
-            cardinality mark are assumed to have cardinality 1 that means existence of exactly one required value corresponding
-            to the attribute or the link. <br><br>
-            The classes CManipDescr, CPhysician and CDiagnosis contain classifier values of manipulation descriptions,
-            physicians and diagnoses respectively. There are links to the classifier classes from the main data classes. In the
-            query building process these links can be traversed both in the direction from the data class to the classifier class, as
-            well as in the reverse direction. <br><br>
-            For every hospital episode there can be several admission and several discharge diagnoses specified; one of these
-            diagnoses is marked as the main admission or discharge diagnosis respectively (accessible from the episode by link
-            admissionDiagnosis_main or dischargeDiagnosis_main), all episode diagnoses that are not main admission or
-            discharge diagnoses are extra diagnoses (accessible from the episode by the link admissionDiagnosis_extra or
-            dischargeDiagnosis_extra). The links admissionDiagnosis and dischargeDiagnosis can be used to reach all admission
-            or discharge diagnoses (including the main ones and the extra ones) for an episode, respectively). <br><br>
+            There are cardinality marks (e.g. [0..1] or *) at some attributes or links. The attributes or links not having any cardinality mark are assumed to have cardinality 1 that means existence of exactly one required value corresponding to the attribute or the link. <br><br>
+            The classes CManipDescr, CPhysician and CDiagnosis contain classifier values of manipulation descriptions, physicians and diagnoses respectively. There are links to the classifier classes from the main data classes. In the query building process these links can be traversed both in the direction from the data class to the classifier class, as well as in the reverse direction. <br><br>
+            For every hospital episode there can be several admission and several discharge diagnoses specified; one of these diagnoses is marked as the main admission or discharge diagnosis respectively (accessible from the episode by link admissionDiagnosis_main or dischargeDiagnosis_main), all episode diagnoses that are not main admission or discharge diagnoses are extra diagnoses (accessible from the episode by the link admissionDiagnosis_extra or dischargeDiagnosis_extra). The links admissionDiagnosis and dischargeDiagnosis can be used to reach all admission or discharge diagnoses (including the main ones and the extra ones) for an episode, respectively. <br><br>
             Similarly, for an outpatient episode the outpatientDiagnosis link lists all diagnoses, outpatientDiagnosis_main lists
             the main diagnosis and outpatientDiagnosis_extra lists the extra diagnoses. <br><br>
-        </div>
-          <div id="example-queries">
-            <h4>Example Queries</h4>
-            <img src="./assets/img/Hospital_example2.png">
-            <img src="./assets/img/Hospital_example3.png">
-            <img src="./assets/img/Hospital_example4.png">
-            <img src="./assets/img/Hospital_example5.png">
-          </div>
-      </div>
-      <div class="component-element" id="user-manual">
-        <h2>User manual for the classic version</h2>
+          </p>
+            <h4 ngbScrollSpyFragment="example-queries">Example Queries</h4>
+            <p>
+              <img src="./assets/img/Hospital_example2.png">
+              <img src="./assets/img/Hospital_example3.png">
+              <img src="./assets/img/Hospital_example4.png">
+              <img src="./assets/img/Hospital_example5.png">
+            </p>
+      <div class="component-element">
+        <h2 ngbScrollSpyFragment="user-manual">User manual for the classic version</h2>
           <div>Select instances of a class, show the values of the instance URI (specified by (select this)) and the designated instance attributes (courseCode, courseCredits, courseName). The attributes are optional by default; the mark (+) indicates that the corresponding attribute (courseCode) is required. The attribute courseCredits is renamed into credits in the query output. Only those instances whose attributes satisfy the given condition are selected.</div>
             <div><img src="assets/img/manual_grid1.png"></div>
             <div>Count all courses.</div>
@@ -300,15 +325,14 @@
                 students or teachers</div>
               <div><img src="assets/img/manual_grid12.png"></div>
       </div>
-      <div class="component-element" id="resources">
-        <h2>Resources</h2>
-          <div class="component-element" id="sample-projects">
-              <h4>Sample Projects</h4>
-              <div>
+        <h2 ngbScrollSpyFragment="resources">Resources</h2>
+              <h4 ngbScrollSpyFragment="sample-projects">Sample Projects</h4>
+              <p>
                 The example projects with configurations over Europeana, DBPedia and
                 wikidata can be uploaded from the following locations (other sample projects
                 are offered during the project initialization, as well):
-                <br />
+                <br/>
+                </p>
                 <li>
                   <a href="https://viziquer.lumii.lv/dss/resources/Europeana_Sample.json"
                     >Europeana sample project.</a>
@@ -321,12 +345,9 @@
                   <a href="https://viziquer.lumii.lv/dss/resources/Wikidata_Sample.json"
                     >Wikidata sample project.</a>
                 </li>
-                <br/>
-              </div>
-            </div>
-            <div class="component-element" id="open-source-code">
-              <h4>Open Source Code</h4>
-              <div>
+                <br>
+              <h4 ngbScrollSpyFragment="open-source-code">Open Source Code</h4>
+              <p>
                   Check out the branch
                   <a href="https://github.com/LUMII-Syslab/viziquer/tree/dss-based-schemata"
                     >dss-based-schemata</a
@@ -347,8 +368,8 @@
                     >its own repository on GitHub</a
                   >
                   (the actual schema data are currently stored in Postgres databases).
-                  <div>
                   The <a href="https://github.com/LUMII-Syslab/data-shape-retrieval-services">data shape retrieval services</a> contain:
+                  </p>
                   <ul>
                     <li>
                       the open source code used for populating the DBPedia and wikidata schema
@@ -360,12 +381,8 @@
           
                     </li>
                   </ul>
-                </div> 
-              </div>
-            </div>
-            <div class="component-element" id="data-retrieval">
-              <h4>Data schema retrieval</h4>
-              <div>
+              <h4 ngbScrollSpyFragment="data-retrieval">Data schema retrieval</h4>
+              <p>
                 The visual query tool is designed to work with user-specified SPARQL
                 endpoints. The
                 <a href="https://github.com/LUMII-Syslab/OBIS-SchemaExtractor">
@@ -381,14 +398,14 @@
                 <br/>
                 Alternatively, the schema can be loaded into
                 <a href="./base/index.html"> classic ViziQuer/web</a>.
-                </div>
-            </div>
-            <div class="component-element" id="data-schema">
-              <h4>Data schemas</h4>
-              <div>
+                </p>
+              <h4 ngbScrollSpyFragment="data-schema">Data schemas</h4>
+              <p>
                 The dumps of PostgreSQL databases for data endpoint schema information
                 storing (including, where possible, the class-property and property-property
                 relations):
+              </p>
+              <ul>
                 <li>
                   Europeana, a sample moderate size schema:
                   <a href="dss/resources/rdfmeta-europeana-220202-1147.pgsql.gz">
@@ -404,14 +421,10 @@
                 <li>
                   DBPedia (large, 188 MB):
                   <a href="dss/resources/rdfmeta-dbpedia-210727-1935.pgsql.gz">
-                    PostgreSQL database for DBPedia (v0)</a
-                  >
+                    PostgreSQL database for DBPedia (v0)</a>
                 </li>
-              <br>
-              </div>
-            </div>
-          </div>
-        </div>
+              </ul>
+    </div>
   </div>
 </div>
 
