@@ -6,4 +6,10 @@ import { Component} from '@angular/core';
   styleUrls: ['./documentation.component.scss']
 })
 
-export class DocumentationComponent{}
+export class DocumentationComponent{
+  isCollapsed: { [key: string]: boolean } = {};
+
+  toggleCollapse(fragment: string): void {
+    this.isCollapsed[fragment] = !this.isCollapsed[fragment];
+  }
+}
