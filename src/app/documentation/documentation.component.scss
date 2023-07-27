@@ -73,26 +73,31 @@ img{
   margin: auto;
 }
 
-h4, h2:not(#introduction){
-  margin: 10px 0;
+h4, h2{
+
+
+
+  :not(#introduction){
+    margin: 10px 0;
+  }
 }
 
 .content{
 
   height: 85%;
   padding: 1rem 2rem;
-ul {
-  list-style: none; 
-}
+  ul {
+    list-style: none; 
 
-ul li::before {
-  content: "\2022";
-  color: $accent-color;
-  font-weight: bold; 
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-}
+    li::before {
+      content: "\2022";
+      color: $accent-color;
+      font-weight: bold; 
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+  } 
 }
 
 .nav-link{
@@ -113,12 +118,12 @@ a.active{
   font-weight: 800;
 }
 
-.custom-sublink {
-  margin-left: 10px;
-  padding-left: 10px;
-}
+// .custom-sublink {
+//   margin-left: 10px;
+//   padding-left: 10px;
+// }
 
-.custom-sublink.active {
+.sublink.active {
   font-weight: 700;
 }
 

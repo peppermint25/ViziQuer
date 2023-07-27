@@ -5,22 +5,22 @@
         <a class="nav-link"  ngbScrollSpyItem="introduction">Introduction</a>
         <a class="nav-link" ngbScrollSpyItem="quick-start">Quick Start</a>
         <nav [ngbCollapse]="isCollapsed['quick-start']" class="nav flex-column">
-          <a class="nav-link ms-3 my-1"  ngbScrollSpyItem="work-with-projects" parent="quick-start">Work with projects</a>
-          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="work-with-diagrams" parent="quick-start">Work with diagrams</a>
+          <a class="nav-link sublink ms-3 my-1"  ngbScrollSpyItem="work-with-projects" parent="quick-start">Work with projects</a>
+          <a class="nav-link sublink ms-3 my-1" ngbScrollSpyItem="work-with-diagrams" parent="quick-start">Work with diagrams</a>
         </nav>
         <a class="nav-link" ngbScrollSpyItem="short-notation">Short Notation and Tool Explenation</a>
         <a class="nav-link" ngbScrollSpyItem="visual-query">Visual Query Example Hospital</a>
         <nav class="nav flex-column" [ngbCollapse]="isCollapsed['visual-query']">
-          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="hospital-schema" parent="visual-query">Mini-Hospital data schema</a>
-          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="example-queries" parent="visual-query">Example Queries </a>
+          <a class="nav-link sublink ms-3 my-1" ngbScrollSpyItem="hospital-schema" parent="visual-query">Mini-Hospital data schema</a>
+          <a class="nav-link sublink ms-3 my-1" ngbScrollSpyItem="example-queries" parent="visual-query">Example Queries </a>
         </nav>
         <a class="nav-link" ngbScrollSpyItem="user-manual">User Manual for Classic Version</a>
         <a class="nav-link" ngbScrollSpyItem="resources">Resources</a>
         <nav class="nav flex-column" [ngbCollapse]="isCollapsed['resources']">
-          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="sample-projects" parent="resources">Sample Projects</a>
-          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="open-source-code" parent="resources">Open Source Code</a>
-          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="data-retrieval" parent="resources">Data Schema Retrieval</a>
-          <a class="nav-link ms-3 my-1" ngbScrollSpyItem="data-schema" parent="resources">Data Schemas</a>
+          <a class="nav-link sublink ms-3 my-1" ngbScrollSpyItem="sample-projects" parent="resources">Sample Projects</a>
+          <a class="nav-link sublink ms-3 my-1" ngbScrollSpyItem="open-source-code" parent="resources">Open Source Code</a>
+          <a class="nav-link sublink ms-3 my-1" ngbScrollSpyItem="data-retrieval" parent="resources">Data Schema Retrieval</a>
+          <a class="nav-link sublink ms-3 my-1" ngbScrollSpyItem="data-schema" parent="resources">Data Schemas</a>
         </nav>
       </nav>
     </nav> 
@@ -288,7 +288,7 @@
                 number of persons related to it either as
                 students or teachers</div>
               <div><img src="assets/img/manual_grid12.png"></div>
-        </div>
+    </div>
         <h2 ngbScrollSpyFragment="resources">
           <button class="toggle-btn" (click)="toggleCollapse('resources')">Resources</button>
         </h2>
@@ -317,87 +317,103 @@
               </li>
               <br>
           </div>
-          <h4 ngbScrollSpyFragment="open-source-code">Open Source Code</h4>
-          <p>
-              Check out the branch
-              <a href="https://github.com/LUMII-Syslab/viziquer/tree/dss-based-schemata"
-                >dss-based-schemata</a
-              >
-              from
-              <a href="https://github.com/LUMII-Syslab/viziquer"
-                >Viziquer repository in GitHub</a
-              >
-              for the visual tool version that works with the data shape (schema) server
-              (needed for large data schema support).
-              <br /><br />
-              The
-              <a href="https://github.com/LUMII-Syslab/data-shape-server"
-                >data shape server</a
-              >
-              (serving the names for auto-completion) is in
-              <a href="https://github.com/LUMII-Syslab/data-shape-server"
-                >its own repository on GitHub</a
-              >
-              (the actual schema data are currently stored in Postgres databases).
-              The <a href="https://github.com/LUMII-Syslab/data-shape-retrieval-services">data shape retrieval services</a> contain:
+          <h4 ngbScrollSpyFragment="open-source-code">
+            <button class="toggle-btn" (click)="toggleCollapse('open-source-code')">
+              Open Source Code
+            </button>
+          </h4>
+          <div [ngbCollapse]="isCollapsed['open-source-code']">
+            <p>
+                Check out the branch
+                <a href="https://github.com/LUMII-Syslab/viziquer/tree/dss-based-schemata"
+                  >dss-based-schemata</a
+                >
+                from
+                <a href="https://github.com/LUMII-Syslab/viziquer"
+                  >Viziquer repository in GitHub</a
+                >
+                for the visual tool version that works with the data shape (schema) server
+                (needed for large data schema support).
+                <br /><br />
+                The
+                <a href="https://github.com/LUMII-Syslab/data-shape-server"
+                  >data shape server</a
+                >
+                (serving the names for auto-completion) is in
+                <a href="https://github.com/LUMII-Syslab/data-shape-server"
+                  >its own repository on GitHub</a
+                >
+                (the actual schema data are currently stored in Postgres databases).
+                The <a href="https://github.com/LUMII-Syslab/data-shape-retrieval-services">data shape retrieval services</a> contain:
+                </p>
+                <ul>
+                  <li>
+                    the open source code used for populating the DBPedia and wikidata schema
+                    databases from their respective SPARQL endpoints, and
+                  </li>
+                  <li>
+                    a utility for importing JSON-formatted schemas obtained from the generic
+                    data schema retrieval (cf. Data schema retrieval section).
+        
+                  </li>
+                </ul>
+          </div>
+          <h4 ngbScrollSpyFragment="data-retrieval">
+            <button class="toggle-btn" (click)="toggleCollapse('data-retrieval')">
+              Data schema retrieval
+            </button>
+          </h4>
+          <div [ngbCollapse]="isCollapsed['data-retrieval']">
+            <p>
+              The visual query tool is designed to work with user-specified SPARQL
+              endpoints. The
+              <a href="https://github.com/LUMII-Syslab/OBIS-SchemaExtractor">
+              Schema Extractor</a>
+              allows for obtaining a JSON-structured schema for a data set.
+              <br/>
+              NB! Use "version 2" within the schema extractor UI.
+              <br/>
+              To use the created schema with ViziQuer/DSS tool, load it into the tool
+              backend database by the
+              <a href="https://github.com/LUMII-Syslab/data-shape-retrieval-services/tree/main/data-shape-import-service"
+              >data shape import service</a>tool.
+              <br/>
+              Alternatively, the schema can be loaded into
+              <a href="./base/index.html"> classic ViziQuer/web</a>.
               </p>
-              <ul>
-                <li>
-                  the open source code used for populating the DBPedia and wikidata schema
-                  databases from their respective SPARQL endpoints, and
-                </li>
-                <li>
-                  a utility for importing JSON-formatted schemas obtained from the generic
-                  data schema retrieval (cf. Data schema retrieval section).
-      
-                </li>
-              </ul>
-          <h4 ngbScrollSpyFragment="data-retrieval">Data schema retrieval</h4>
-          <p>
-            The visual query tool is designed to work with user-specified SPARQL
-            endpoints. The
-            <a href="https://github.com/LUMII-Syslab/OBIS-SchemaExtractor">
-            Schema Extractor</a>
-            allows for obtaining a JSON-structured schema for a data set.
-            <br/>
-            NB! Use "version 2" within the schema extractor UI.
-            <br/>
-            To use the created schema with ViziQuer/DSS tool, load it into the tool
-            backend database by the
-            <a href="https://github.com/LUMII-Syslab/data-shape-retrieval-services/tree/main/data-shape-import-service"
-            >data shape import service</a>tool.
-            <br/>
-            Alternatively, the schema can be loaded into
-            <a href="./base/index.html"> classic ViziQuer/web</a>.
+          </div>
+          <h4 ngbScrollSpyFragment="data-schema">
+            <button class="toggle-btn" (click)="toggleCollapse('data-schema')">
+              Data schemas
+            </button>
+          </h4>
+          <div [ngbCollapse]="isCollapsed['data-schema']">
+            <p>
+              The dumps of PostgreSQL databases for data endpoint schema information
+              storing (including, where possible, the class-property and property-property
+              relations):
             </p>
-          <h4 ngbScrollSpyFragment="data-schema">Data schemas</h4>
-          <p>
-            The dumps of PostgreSQL databases for data endpoint schema information
-            storing (including, where possible, the class-property and property-property
-            relations):
-          </p>
-          <ul>
-            <li>
-              Europeana, a sample moderate size schema:
-              <a href="dss/resources/rdfmeta-europeana-220202-1147.pgsql.gz">
-                PostgreSQL database for Europeana
-              </a>
-            </li>
-            <li>
-              Empty schema (can be used to populate with user data):
-              <a href="dss/resources/rdfmeta-empty-220202-1148.pgsql.gz">
-                Empty PostgreSQL database
-              </a>
-            </li>
-            <li>
-              DBPedia (large, 188 MB):
-              <a href="dss/resources/rdfmeta-dbpedia-210727-1935.pgsql.gz">
-                PostgreSQL database for DBPedia (v0)</a>
-            </li>
-          </ul>
-        </div>
-
-              
+            <ul>
+              <li>
+                Europeana, a sample moderate size schema:
+                <a href="dss/resources/rdfmeta-europeana-220202-1147.pgsql.gz">
+                  PostgreSQL database for Europeana
+                </a>
+              </li>
+              <li>
+                Empty schema (can be used to populate with user data):
+                <a href="dss/resources/rdfmeta-empty-220202-1148.pgsql.gz">
+                  Empty PostgreSQL database
+                </a>
+              </li>
+              <li>
+                DBPedia (large, 188 MB):
+                <a href="dss/resources/rdfmeta-dbpedia-210727-1935.pgsql.gz">
+                  PostgreSQL database for DBPedia (v0)</a>
+              </li>
+            </ul>
+          </div>
+          </div>  
     </div>
   </div>
 </div>
